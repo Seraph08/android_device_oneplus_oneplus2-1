@@ -41,6 +41,8 @@ mm.enable.smoothstreaming=true
 audio.offload.buffer.size.kb=512
 audio.offload.passthrough=false
 tunnel.audio.encode=false
+av.debug.disable.pers.cache=true
+ro.audio.flinger_standbytime_ms=300
 
 # Bluetooth
 bluetooth.hfp.client=1
