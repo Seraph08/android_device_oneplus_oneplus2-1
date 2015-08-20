@@ -23,6 +23,8 @@ audio.offload.buffer.size.kb=1024
 audio.dolby.ds2.enabled=true
 persist.dpm.feature=1
 tunnel.audio.encode=false
+av.debug.disable.pers.cache=true
+ro.audio.flinger_standbytime_ms=300
 
 # Bluetooth
 bluetooth.hfp.client=1
