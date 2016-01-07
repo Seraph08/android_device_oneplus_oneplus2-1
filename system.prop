@@ -150,6 +150,92 @@ persist.radio.apm_sim_not_pwdn=1
 persist.radio.sib16_support=1
 persist.radio.sw_mbn_update=0
 persist.radio.start_ota_daemon=1
+
+# Start in global mode
+ro.telephony.default_network=10
+
+debug.sf.hw=1
+debug.egl.hw=1
+debug.composition.type=c2d
+persist.hwc.mdpcomp.enable=true
+persist.mdpcomp.4k2kSplit=1
+persist.hwc.mdpcomp.maxpermixer=5
+persist.mdpcomp_perfhint=50
+debug.mdpcomp.logs=0
+persist.metadata_dynfps.disable=true
+persist.hwc.ptor.enable=true
+dalvik.vm.heapsize=36m
+dev.pm.dyn_samplingrate=1
+persist.demo.hdmirotationlock=false
+
+ro.sf.lcd_density=560
+ro.hdmi.enable=true
+persist.speaker.prot.enable=false
+#0 is default(30 min)
+persist.spkr.cal.duration=0
+qcom.hw.aac.encoder=true
+
+#
+# system props for the cne module
+#
+persist.cne.feature=1
+
+#system props for the MM modules
+
+media.stagefright.enable-player=true
+media.stagefright.enable-http=true
+media.stagefright.enable-aac=true
+media.stagefright.enable-qcp=true
+media.stagefright.enable-fma2dp=true
+media.stagefright.enable-scan=true
+mmp.enable.3g2=true
+mm.enable.smoothstreaming=true
+media.aac_51_output_enabled=true
+av.debug.disable.pers.cache=true
+
+#3379827: Decimal sum after adding WAV parser flag
+#37491 is decimal sum of supported codecs in AAL
+#codecs: DivX DivXHD AVI AC3 ASF AAC QCP DTS 3G2 MP2TS
+mm.enable.qcom_parser=3379827
+
+# Enable AwesomePlayer stats
+persist.debug.sf.statistics=1
+
+# Print clip name being played
+media.stagefright.log-uri=1
+
+# VIDC: debug_levels
+# 1:ERROR 2:HIGH 4:LOW 0:NOLOGS 7:AllLOGS
+vidc.debug.level=1
+
+# Additional i/p buffer in case of encoder DCVS
+vidc.enc.dcvs.extra-buff-count=2
+
+#
+# system props for the data modules
+#
+ro.use_data_netmgrd=true
+persist.data.netmgrd.qos.enable=true
+persist.data.mode=concurrent
+ro.data.large_tcp_window_size=true
+
+#system props for time-services
+persist.timed.enable=true
+
+#
+# system prop for opengles version
+#
+# 196608 is decimal for 0x30000 to report major/minor versions as 3/0
+# 196609 is decimal for 0x30001 to report major/minor versions as 3/1
+ro.opengles.version=196609
+
+# System property for cabl
+ro.qualcomm.cabl=2
+
+#
+# System props for telephony
+# System prop to turn on CdmaLTEPhone always
+telephony.lteOnCdmaDevice=1
 persist.radio.rat_on=combine
 persist.data.qmi.adb_logmask=0
 
