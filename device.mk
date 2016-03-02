@@ -141,11 +141,6 @@ PRODUCT_PACKAGES += \
     sap.conf \
     xtwifi.conf
 
-# IPACM
-PRODUCT_PACKAGES += \
-    IPACM_cfg.xml \
-    ipacm
-
 # IPv6
 PRODUCT_PACKAGES += \
     ebtables \
@@ -200,6 +195,19 @@ PRODUCT_PACKAGES += \
 # Power
 PRODUCT_PACKAGES += \
     power.msm8994
+
+# Ramdisk
+PRODUCT_PACKAGES += \
+    init.qcom.bt.sh
+
+PRODUCT_PACKAGES += \
+    fstab.qcom \
+    init.qcom.power.rc \
+    init.qcom.rc \
+    init.qcom.sh \
+    init.qcom.usb.rc \
+    init.qcom.usb.sh \
+    ueventd.qcom.rc
 
 # QMI
 PRODUCT_PACKAGES += \
