@@ -91,6 +91,9 @@ PRODUCT_PACKAGES += \\
     libqmi_client_qmux \\
     libqmiservices
 
+PRODUCT_PACKAGES += \\
+    keystore.msm8994
+
 \$(call inherit-product, vendor/$VENDOR/$DEVICE/$DEVICE-vendor-blobs.mk)
 EOF
 
