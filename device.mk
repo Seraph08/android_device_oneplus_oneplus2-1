@@ -198,6 +198,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     power.msm8994
 
+# QMI
+PRODUCT_PACKAGES += \
+    dsi_config.xml \
+    netmgr_config.xml \
+    qmi_config.xml
+
 # Ramdisk
 PRODUCT_PACKAGES += \
     init.qcom.bt.sh
