@@ -120,8 +120,12 @@ ENABLE_CPUSETS := true
 
 BOARD_EGL_CFG := $(PLATFORM_PATH)/egl.cfg
 
-# Gestures
-TARGET_GESTURES_NODE := "/proc/touchpanel/gesture_enable"
+# FM
+BOARD_HAVE_QCOM_FM := true
+TARGET_QCOM_NO_FM_FIRMWARE := true
+
+# Fonts
+EXTENDED_FONT_FOOTPRINT := true
 
 # Releasetools extension for shipping firmware
 TARGET_RELEASETOOLS_EXTENSIONS := device/oneplus/oneplus2
@@ -198,6 +202,12 @@ TARGET_USES_INTERACTION_BOOST := false
 TARGET_RECOVERY_FSTAB := $(PLATFORM_PATH)/rootdir/etc/fstab.qcom
 
 BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy
+
+# Time services
+BOARD_USES_QC_TIME_SERVICES := true
+
+# Gestures
+TARGET_GESTURES_NODE := "/proc/touchpanel/gesture_enable"
 
 # inherit from the proprietary version
 -include vendor/oneplus/oneplus2/BoardConfigVendor.mk
