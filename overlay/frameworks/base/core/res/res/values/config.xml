@@ -374,6 +374,41 @@
          so that applications can still use their own mechanisms. -->
     <bool name="config_enableAutoPowerModes">true</bool>
 
+    <integer-array name="launchboost_param_value">
+        <item>0x40C00000</item> <!-- SCHEDBOOST resource opcode-->
+        <item>0x1</item>        <!-- SCHEDBOOST resource value-->
+        <item>0x40800100</item> <!-- CPUBOOST_MIN_FREQ LITTLE Core resource opcode-->
+        <item>1300</item>     <!-- CPUBOOST MIN_FREQ resource value-->
+     </integer-array>
+
+   <integer-array name="flingboost_param_value">
+        <item>0x40C00000</item> <!-- SCHEDBOOST resource opcode-->
+        <item>0x1</item>        <!-- SCHEDBOOST resource value-->
+        <item>0x40800100</item> <!-- CPUBOOST_MIN_FREQ LITTLE Core resource opcode-->
+        <item>1300</item>     <!-- CPUBOOST MIN_FREQ resource value-->
+     </integer-array>
+
+  <integer-array name="scrollboost_param_value">
+        <item>0x40C00000</item> <!-- SCHEDBOOST resource opcode-->
+        <item>0x1</item>        <!-- SCHEDBOOST resource value-->
+        <item>0x40800100</item> <!-- CPUBOOST_MIN_FREQ LITTLE Core resource opcode-->
+        <item>1300</item>     <!-- CPUBOOST MIN_FREQ resource value-->
+     </integer-array>
+
+   <integer-array name="animationboost_param_value">
+        <item>0x40C00000</item> <!-- SCHEDBOOST resource opcode-->
+        <item>0x1</item>        <!-- SCHEDBOOST resource value-->
+        <item>0x40800100</item> <!-- CPUBOOST_MIN_FREQ LITTLE Core resource opcode-->
+        <item>1300</item>     <!-- CPUBOOST MIN_FREQ resource value-->
+     </integer-array>
+
+   <integer-array name="ascrollboost_param_value">
+        <item>0x40C00000</item> <!-- SCHEDBOOST resource opcode-->
+        <item>0x1</item>        <!-- SCHEDBOOST resource value-->
+        <item>0x40800100</item> <!-- CPUBOOST_MIN_FREQ LITTLE Core resource opcode-->
+        <item>1300</item>     <!-- CPUBOOST MIN_FREQ resource value-->
+     </integer-array>
+
     <!-- Enable overlay for all location components. -->
     <string name="config_networkLocationProviderPackageName" translatable="false">com.qualcomm.location</string>
     <string name="config_fusedLocationProviderPackageName" translatable="false">com.qualcomm.location</string>
