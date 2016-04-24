@@ -19,7 +19,7 @@
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <bool name="config_enableKeyHandler">true</bool>
-    <integer name="config_doubleTapKeyCode">249</integer>
+    <integer name="config_doubleTapKeyCode">89</integer>
     <integer name="config_drawVKeyCode">61</integer>
     <integer name="config_drawInverseVKeyCode">62</integer>
     <integer name="config_drawOKeyCode">59</integer>
@@ -36,7 +36,6 @@
     <integer name="config_oneFingerSwipeRightKeyCode">65</integer>
     <integer name="config_oneFingerSwipeDownKeyCode">67</integer>
     <integer name="config_oneFingerSwipeLeftKeyCode">66</integer>
-    <integer name="config_twoFingerSwipeDownKeyCode">60</integer>
     <integer name="config_drawArrowLeftKeyCode">63</integer>
     <integer name="config_drawArrowRightKeyCode">64</integer>
 
@@ -45,8 +44,6 @@
     <integer name="config_drawODefault">7</integer>
     <integer name="config_drawArrowLeftDefault">6</integer>
     <integer name="config_drawArrowRightDefault">5</integer>
-    <integer name="config_twoFingerSwipeDownDefault">4</integer>
-
     <!-- Enable system navigation keys. -->
     <bool name="config_supportSystemNavigationKeys">true</bool>
 </resources>
