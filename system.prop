@@ -41,16 +41,6 @@ mm.enable.smoothstreaming=true
 audio.offload.buffer.size.kb=512
 audio.offload.passthrough=false
 tunnel.audio.encode=false
-av.debug.disable.pers.cache=true
-ro.audio.flinger_standbytime_ms=300
-media.stagefright.enable-player=true
-media.stagefright.enable-http=true
-media.stagefright.enable-aac=true
-media.stagefright.enable-qcp=true
-media.stagefright.enable-fma2dp=true
-media.stagefright.enable-scan=true
-mmp.enable.3g2=true
-media.aac_51_output_enabled=true
 
 # Bluetooth
 bluetooth.hfp.client=1
