@@ -12,6 +12,9 @@ persist.audio.fluence.speaker=true
 ro.qc.sdk.audio.fluencetype=fluence
 ro.qc.sdk.audio.ssr=false
 persist.audio.ssr.3mic=false
+media.aac_51_output_enabled=true
+audio.offload.pcm.16bit.enable=false
+audio.offload.pcm.24bit.enable=true
 use.voice.path.for.pcm.voip=true
 audio.offload.multiple.enabled=true
 audio.offload.gapless.enabled=true
@@ -20,16 +23,6 @@ audio.offload.buffer.size.kb=1024
 audio.dolby.ds2.enabled=true
 persist.dpm.feature=1
 tunnel.audio.encode=false
-av.debug.disable.pers.cache=true
-ro.audio.flinger_standbytime_ms=300
-media.stagefright.enable-player=true
-media.stagefright.enable-http=true
-media.stagefright.enable-aac=true
-media.stagefright.enable-qcp=true
-media.stagefright.enable-fma2dp=true
-media.stagefright.enable-scan=true
-mmp.enable.3g2=true
-media.aac_51_output_enabled=true
 
 # Bluetooth
 bluetooth.hfp.client=1
