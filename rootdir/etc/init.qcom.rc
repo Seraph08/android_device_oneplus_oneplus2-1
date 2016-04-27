@@ -25,7 +25,6 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-import init.qcom.power.rc
 import init.qcom.usb.rc
 
 on early-init
@@ -206,6 +205,7 @@ on early-boot
     write /sys/kernel/boot_adsp/boot 1
 
 on boot
+    start qcom-power
     start rmt_storage
 
     # update foreground cpuset now that processors are up
@@ -1029,6 +1029,10 @@ on property:drmdiag.load=0
 service qcom-sh /system/bin/sh /init.qcom.sh
     class late_start
     user root
+    oneshot
+
+service qcom-power /system/bin/sh /system/etc/init.qcom.post_boot.sh
+    disabled
     oneshot
 
 service hostapd /system/bin/hostapd /data/hostapd/hostapd.conf
