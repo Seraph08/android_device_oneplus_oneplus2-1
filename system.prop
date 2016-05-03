@@ -84,7 +84,7 @@ dalvik.vm.boot-dex2oat-threads=4
 dalvik.vm.image-dex2oat-threads=4
 dalvik.vm.image-dex2oat-filter=everything
 
-# Dex2oat limits
+# Dexopt
 dalvik.vm.boot-dex2oat-threads=4
 dalvik.vm.dex2oat-threads=2
 dalvik.vm.image-dex2oat-threads=4
