@@ -39,6 +39,7 @@ on fs
 #    wait /dev/block/bootdevice
     mount_all fstab.qcom
     swapon_all fstab.qcom
+    write /proc/sys/vm/swappiness 100
 
     wait /dev/block/bootdevice/by-name/cache
     mount ext4 /dev/block/bootdevice/by-name/cache /cache nosuid nodev barrier=1

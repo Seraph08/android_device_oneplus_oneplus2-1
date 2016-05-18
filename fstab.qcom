@@ -11,4 +11,3 @@
 /devices/soc.0/f98a4900.sdhci/mmc_host* /storage/sdcard1   vfat    nosuid,nodev                                    wait,voldmanaged=sdcard1:auto,encryptable=footer
 /devices/soc.0/f9a55000.ehci/usb1       /storage/uicc0     vfat    nosuid,nodev                                    wait,voldmanaged=uicc0:auto
 /devices/soc.0/f9a55000.ehci/usb1       /storage/uicc1     vfat    nosuid,nodev                                    wait,voldmanaged=uicc1:auto
-/dev/block/zram0                        none               swap    defaults                                        zramsize=536870912
