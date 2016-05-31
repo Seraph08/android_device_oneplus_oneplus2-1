@@ -431,7 +431,6 @@ service perfd /system/vendor/bin/perfd
     group system
     socket perfd seqpacket 0666 root system
     disabled
-    writepid /dev/cpuset/system-background/tasks
 
 service per_mgr /system/bin/pm-service
     class late_start
