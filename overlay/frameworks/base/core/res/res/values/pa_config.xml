@@ -55,9 +55,9 @@
 
     <integer name="config_drawOKeyCode">59</integer>
 
-    <!-- <integer name="config_drawMKeyCode">88</integer> -->
+    <integer name="config_drawMKeyCode">88</integer>
 
-    <!-- <integer name="config_drawWKeyCode">87</integer> -->
+    <integer name="config_drawWKeyCode">87</integer>
 
     <integer name="config_drawArrowLeftKeyCode">63</integer>
 
