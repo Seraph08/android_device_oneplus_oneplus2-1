@@ -84,7 +84,7 @@ case "$target" in
          echo 80000 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/max_freq_hysteresis
          echo 384000 > /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq
          # insert core_ctl module and use conservative paremeters
-         insmod /system/lib/modules/core_ctl.ko
+         insmod /system/lib/modules/hcube.ko
          echo 1 > /sys/devices/system/cpu/cpu4/core_ctl/max_cpus
          # re-enable thermal and BCL hotplug
          echo 1 > /sys/module/msm_thermal/core_control/enabled
@@ -114,11 +114,18 @@ case "$target" in
          # configure core_ctl module parameters
          echo 4 > /sys/devices/system/cpu/cpu4/core_ctl/max_cpus
          echo 0 > /sys/devices/system/cpu/cpu4/core_ctl/min_cpus
-         echo 68 > /sys/devices/system/cpu/cpu4/core_ctl/busy_up_thres
-         echo 40 > /sys/devices/system/cpu/cpu4/core_ctl/busy_down_thres
+         echo 70 > /sys/devices/system/cpu/cpu4/core_ctl/busy_up_thres
+         echo 10 > /sys/devices/system/cpu/cpu4/core_ctl/busy_down_thres
          echo 100 > /sys/devices/system/cpu/cpu4/core_ctl/offline_delay_ms
          echo 1 > /sys/devices/system/cpu/cpu4/core_ctl/is_big_cluster
          echo 4 > /sys/devices/system/cpu/cpu4/core_ctl/task_thres
+         # configure hcube module parameters
+         echo 1 > /sys/devices/system/cpu/cpu4/core_ctl/hc_on
+         echo 1 > /sys/devices/system/cpu/cpu4/core_ctl/hc_down_scale_on
+         echo 1 > /sys/devices/system/cpu/cpu4/core_ctl/hc_thres_on
+         echo 1 > /sys/devices/system/cpu/cpu4/core_ctl/hc_ro_use_gourd
+         echo "0 0 768000 1248000" > /sys/devices/system/cpu/cpu4/core_ctl/hc_correl_lvs
+         echo 1 > /sys/devices/system/cpu/cpu4/core_ctl/hc_correl_use_pcost
          # Setting b.L scheduler parameters
          echo 1 > /proc/sys/kernel/sched_migration_fixup
          echo 30 > /proc/sys/kernel/sched_small_task
