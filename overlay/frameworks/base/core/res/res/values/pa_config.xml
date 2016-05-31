@@ -29,31 +29,87 @@
              8 - Assistant (search)
             16 - App switch
             32 - Camera
-            64 - Volume rocker
          For example, a device with Home, Back and Menu keys would set this
          config to 7. -->
-    <integer name="config_deviceHardwareKeys">83</integer>
+    <integer name="config_deviceHardwareKeys">19</integer>
 
-    <integer name="config_doubleTapKeyCode">89</integer>
+    <!-- Control the behavior when the user long presses the home button.
+            0 - Nothing
+            1 - Menu key
+            2 - Recent apps view in SystemUI
+            3 - Launch assist intent
+            4 - Voice Search
+            5 - In-app Search
+            6 - Launch Camera
+         This needs to match the constants in
+         policy/src/com/android/internal/policy/impl/PhoneWindowManager.java
+    -->
+    <integer name="config_longPressOnHardwareHomeBehavior">3</integer>
+
+    <!-- Keycodes of gestures. If the gesture is not supported set it to 0. -->
+    <integer name="config_doubleTapKeyCode">183</integer>
+
     <integer name="config_drawVKeyCode">61</integer>
+
     <integer name="config_drawInverseVKeyCode">62</integer>
+
     <integer name="config_drawOKeyCode">59</integer>
+
     <integer name="config_drawMKeyCode">88</integer>
+
     <integer name="config_drawWKeyCode">87</integer>
-    <integer name="config_oneFingerSwipeUpKeyCode">68</integer>
-    <integer name="config_oneFingerSwipeRightKeyCode">65</integer>
-    <integer name="config_oneFingerSwipeDownKeyCode">67</integer>
-    <integer name="config_oneFingerSwipeLeftKeyCode">66</integer>
+
     <integer name="config_drawArrowLeftKeyCode">63</integer>
+
     <integer name="config_drawArrowRightKeyCode">64</integer>
 
+    <integer name="config_oneFingerSwipeUpKeyCode">68</integer>
+
+    <integer name="config_oneFingerSwipeRightKeyCode">65</integer>
+
+    <integer name="config_oneFingerSwipeDownKeyCode">67</integer>
+
+    <integer name="config_oneFingerSwipeLeftKeyCode">66</integer>
+
+    <integer name="config_twoFingerSwipeKeyCode">60</integer>
+
+    <!-- Default settings for gestures
+            0 - Disabled
+            1 - Wake device
+            2 - Toggle flashlight
+            3 - Toggle airplane mode
+            4 - Play/Pause music
+            5 - Next music
+            6 - Previous music
+            7 - Open camera
+            8 - Open dialer -->
     <integer name="config_doubleTapDefault">1</integer>
+
     <integer name="config_drawVDefault">2</integer>
 
     <integer name="config_drawInverseVDefault">0</integer>
 
     <integer name="config_drawODefault">7</integer>
+
+    <integer name="config_drawMDefault">0</integer>
+
+    <integer name="config_drawWDefault">0</integer>
+
     <integer name="config_drawArrowLeftDefault">6</integer>
+
     <integer name="config_drawArrowRightDefault">5</integer>
-    <integer name="config_twoFingerSwipeDownDefault">4</integer>
+
+    <integer name="config_oneFingerSwipeUpDefault">0</integer>
+
+    <integer name="config_oneFingerSwipeRightDefault">0</integer>
+
+    <integer name="config_oneFingerSwipeDownDefault">0</integer>
+
+    <integer name="config_oneFingerSwipeLeftDefault">0</integer>
+
+    <integer name="config_twoFingerSwipeDefault">4</integer>
+
+    <!-- Whether to to intercept inputs on screen off. -->
+    <bool name="config_enableKeyHandler">true</bool>
+
 </resources>
