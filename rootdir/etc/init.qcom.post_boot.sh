@@ -60,8 +60,8 @@ case "$target" in
          echo 1 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/use_sched_load
          echo 1 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/use_migration_notif
          echo 19000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/above_hispeed_delay
-         echo 90 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load
-         echo 20000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_rate
+         echo 95 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load
+         echo 19000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_rate
          echo 960000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/hispeed_freq
          echo 1 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/io_is_busy
          echo 80 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads
@@ -75,8 +75,8 @@ case "$target" in
          echo 1 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/use_sched_load
          echo 1 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/use_migration_notif
          echo "19000 1400000:39000 1700000:19000" > /sys/devices/system/cpu/cpu4/cpufreq/interactive/above_hispeed_delay
-         echo 90 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/go_hispeed_load
-         echo 20000 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/timer_rate
+         echo 95 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/go_hispeed_load
+         echo 19000 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/timer_rate
          echo 1248000 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/hispeed_freq
          echo 1 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/io_is_busy
          echo "85 1500000:90 1800000:70" > /sys/devices/system/cpu/cpu4/cpufreq/interactive/target_loads
