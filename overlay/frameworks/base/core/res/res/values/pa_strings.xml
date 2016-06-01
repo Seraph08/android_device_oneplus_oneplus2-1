@@ -19,8 +19,6 @@
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Alert slider proc nodes paths. -->
-    <add-resource type="string" name="alert_slider_state_path"></add-resource>
     <string name="alert_slider_state_path">/sys/class/switch/tri-state-key/state</string>
-    <add-resource type="string" name="alert_slider_uevent_match_path"></add-resource>
     <string name="alert_slider_uevent_match_path">DEVPATH=/devices/virtual/switch/tri-state-key</string>
 </resources>
