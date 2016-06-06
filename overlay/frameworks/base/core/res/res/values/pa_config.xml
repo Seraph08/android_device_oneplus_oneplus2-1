@@ -23,8 +23,15 @@
     <integer name="config_drawVKeyCode">61</integer>
     <integer name="config_drawInverseVKeyCode">62</integer>
     <integer name="config_drawOKeyCode">59</integer>
-    <integer name="config_drawMKeyCode">88</integer>
-    <integer name="config_drawWKeyCode">87</integer>
+
+    <!-- <integer name="config_drawMKeyCode">88</integer> -->
+
+    <!-- <integer name="config_drawWKeyCode">87</integer> -->
+
+    <integer name="config_drawArrowLeftKeyCode">63</integer>
+
+    <integer name="config_drawArrowRightKeyCode">64</integer>
+
     <integer name="config_oneFingerSwipeUpKeyCode">68</integer>
     <integer name="config_oneFingerSwipeRightKeyCode">65</integer>
     <integer name="config_oneFingerSwipeDownKeyCode">67</integer>
