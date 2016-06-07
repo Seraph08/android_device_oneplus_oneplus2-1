@@ -84,6 +84,7 @@ dalvik.vm.heapmaxfree=8m
 dalvik.vm.boot-dex2oat-threads=4
 dalvik.vm.dex2oat-threads=2
 dalvik.vm.image-dex2oat-threads=4
+dalvik.vm.image-dex2oat-filter=everything
 
 # Dexopt
 dalvik.vm.dex2oat-threads=2
