@@ -59,9 +59,9 @@
 
     <integer name="config_drawWKeyCode">87</integer>
 
-    <integer name="config_drawArrowLeftKeyCode">63</integer>
+    <integer name="config_drawArrowLeftKeyCode">64</integer>
 
-    <integer name="config_drawArrowRightKeyCode">64</integer>
+    <integer name="config_drawArrowRightKeyCode">63</integer>
 
     <integer name="config_oneFingerSwipeUpKeyCode">68</integer>
 
