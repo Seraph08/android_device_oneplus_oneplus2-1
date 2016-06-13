@@ -95,9 +95,9 @@
 
     <integer name="config_drawWDefault">0</integer>
 
-    <integer name="config_drawArrowLeftDefault">6</integer>
+    <integer name="config_drawArrowLeftDefault">5</integer>
 
-    <integer name="config_drawArrowRightDefault">5</integer>
+    <integer name="config_drawArrowRightDefault">6</integer>
 
     <integer name="config_oneFingerSwipeUpDefault">0</integer>
 
