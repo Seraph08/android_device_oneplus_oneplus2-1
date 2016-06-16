@@ -421,14 +421,4 @@
         <item>"/system/framework/arm64/boot-core-libart.oat"</item>
     </string-array>
 
-    <!-- Default value for proximity check on screen wake
-         NOTE ! - Enable for devices that have a fast response proximity sensor (ideally < 300ms)
-    -->
-    <add-resource type="bool" name="config_proximityCheckOnWake"></add-resource>
-    <bool name="config_proximityCheckOnWake">true</bool>
-    <add-resource type="integer" name="config_proximityCheckTimeout"></add-resource>
-    <integer name="config_proximityCheckTimeout">100</integer>
-    <add-resource type="bool" name="config_proximityCheckOnWakeEnabledByDefault"></add-resource>
-    <bool name="config_proximityCheckOnWakeEnabledByDefault">true</bool>
-
 </resources>
