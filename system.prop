@@ -25,6 +25,7 @@ persist.dpm.feature=1
 tunnel.audio.encode=false
 av.debug.disable.pers.cache=true
 ro.audio.flinger_standbytime_ms=300
+audio.deep_buffer.media=true
 
 # Bluetooth
 bluetooth.hfp.client=1
