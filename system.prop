@@ -217,7 +217,8 @@ ro.data.large_tcp_window_size=true
 #
 # 196608 is decimal for 0x30000 to report major/minor versions as 3/0
 # 196609 is decimal for 0x30001 to report major/minor versions as 3/1
-ro.opengles.version=196609
+# 196610 is decimal for 0x30002 to report major/minor versions as 3/2
+ro.opengles.version=196610
 
 # System property for cabl
 ro.qualcomm.cabl=2
