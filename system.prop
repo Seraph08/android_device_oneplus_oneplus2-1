@@ -240,18 +240,6 @@ ro.sys.sdcardfs=true
 #Disable 16 bit PCM offload by default
 audio.offload.pcm.16bit.enable=true
 
-audio.offload.passthrough=false
-audio.offload.multiple.enabled=false
-
-#Enable 24 bit PCM offload by default
-audio.offload.pcm.24bit.enable=true
-
-#Enable audio track offload by default
-audio.offload.track.enable=true
-
-#Enable music through deep buffer
-audio.deep_buffer.media=true
-
 # Tethering
 net.tethering.noprovisioning=true
 
