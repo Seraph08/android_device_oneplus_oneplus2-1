@@ -161,6 +161,9 @@ ro.qc.sdk.camera.facialproc=false
 # Storage
 ro.sys.sdcardfs=true
 
+#Disable 16 bit PCM offload by default
+audio.offload.pcm.16bit.enable=true
+
 # Tethering
 net.tethering.noprovisioning=true
 
