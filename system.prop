@@ -44,6 +44,14 @@ tunnel.audio.encode=false
 av.debug.disable.pers.cache=true
 ro.audio.flinger_standbytime_ms=300
 audio.deep_buffer.media=true
+media.stagefright.enable-player=true
+media.stagefright.enable-http=true
+media.stagefright.enable-aac=true
+media.stagefright.enable-qcp=true
+media.stagefright.enable-fma2dp=true
+media.stagefright.enable-scan=true
+mmp.enable.3g2=true
+media.aac_51_output_enabled=true
 
 # Bluetooth
 bluetooth.hfp.client=1
@@ -181,17 +189,6 @@ qcom.hw.aac.encoder=true
 persist.cne.feature=1
 
 #system props for the MM modules
-
-media.stagefright.enable-player=true
-media.stagefright.enable-http=true
-media.stagefright.enable-aac=true
-media.stagefright.enable-qcp=true
-media.stagefright.enable-fma2dp=true
-media.stagefright.enable-scan=true
-mmp.enable.3g2=true
-mm.enable.smoothstreaming=true
-media.aac_51_output_enabled=true
-av.debug.disable.pers.cache=true
 
 #3379827: Decimal sum after adding WAV parser flag
 #37491 is decimal sum of supported codecs in AAL
