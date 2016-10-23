@@ -266,9 +266,6 @@ PRODUCT_COPY_FILES += \
 
 # WiFi
 PRODUCT_PACKAGES += \
-    ipacm \
-    ipacm-diag \
-    IPACM_cfg.xml \
     hostapd \
     libwpa_client \
     wpa_supplicant \
