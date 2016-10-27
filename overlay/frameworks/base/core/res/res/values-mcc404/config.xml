@@ -20,5 +20,6 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Configuration that determines if ACTIVATE_REJECT_GGSN is to be treated as
          a permanent error -->
+    <add-resource type="bool" name="config_reject_ggsn_perm_failure"></add-resource>
     <bool name="config_reject_ggsn_perm_failure">false</bool>
 </resources>
