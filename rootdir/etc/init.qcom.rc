@@ -434,7 +434,7 @@ on post-fs-data
     mkdir /data/data/media 0770 media media
 
 # start camera server as daemon
-service qcamerasvr /system/bin/mm-qcamera-daemon
+service qcamerasvr /system/bin/mm-qcamera-daemon-op
     class main
     user camera
     group camera system inet input graphics
