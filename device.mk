@@ -92,7 +92,10 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    libop2_cam
+    camera.msm8994 \
+    mm-qcamera-app \
+    libmm-qcamera \
+    sensors.hal.tof
 
 # Connectivity Engine support (CNE)
 PRODUCT_PACKAGES += \
