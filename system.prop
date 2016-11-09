@@ -43,7 +43,6 @@ audio.offload.passthrough=false
 tunnel.audio.encode=false
 av.debug.disable.pers.cache=true
 ro.audio.flinger_standbytime_ms=300
-audio.deep_buffer.media=true
 media.stagefright.enable-player=true
 media.stagefright.enable-http=true
 media.stagefright.enable-aac=true
@@ -63,7 +62,6 @@ ro.bluetooth.wipower=true
 persist.camera.HAL3.enabled=0
 persist.camera.cpp.duplication=false
 vidc.debug.perf.mode=2
-vidc.enc.dcvs.extra-buff-count=2
 media.stagefright.legacyencoder=true
 media.stagefright.less-secure=true
 
@@ -165,14 +163,12 @@ ro.telephony.default_network=10
 debug.sf.hw=1
 debug.egl.hw=1
 debug.composition.type=c2d
-persist.hwc.mdpcomp.enable=true
 persist.mdpcomp.4k2kSplit=1
 persist.hwc.mdpcomp.maxpermixer=5
 persist.mdpcomp_perfhint=50
 debug.mdpcomp.logs=0
 persist.metadata_dynfps.disable=true
 persist.hwc.ptor.enable=true
-dalvik.vm.heapsize=36m
 dev.pm.dyn_samplingrate=1
 persist.demo.hdmirotationlock=false
 
@@ -216,9 +212,6 @@ persist.data.netmgrd.qos.enable=true
 persist.data.mode=concurrent
 ro.data.large_tcp_window_size=true
 
-#system props for time-services
-persist.timed.enable=true
-
 #
 # system prop for opengles version
 #
@@ -246,6 +239,18 @@ ro.sys.sdcardfs=true
 
 #Disable 16 bit PCM offload by default
 audio.offload.pcm.16bit.enable=true
+
+audio.offload.passthrough=false
+audio.offload.multiple.enabled=false
+
+#Enable 24 bit PCM offload by default
+audio.offload.pcm.24bit.enable=true
+
+#Enable audio track offload by default
+audio.offload.track.enable=true
+
+#Enable music through deep buffer
+audio.deep_buffer.media=true
 
 # Tethering
 net.tethering.noprovisioning=true
