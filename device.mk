@@ -19,6 +19,11 @@ $(call inherit-product-if-exists, vendor/oneplus/oneplus2/oneplus2-vendor.mk)
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
+TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
+
+# Enable features in video HAL that can compile only on this platform
+TARGET_USES_MEDIA_EXTENSIONS := true
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml \
@@ -164,6 +169,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/fpc1020.kl:system/usr/keylayout/fpc1020.kl \
     $(LOCAL_PATH)/keylayout/synaptics.kl:system/usr/keylayout/synaptics.kl
+
+#Android EGL implementation
+PRODUCT_PACKAGES += libGLES_android
 
 # Lights
 PRODUCT_PACKAGES += \
