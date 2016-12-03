@@ -143,3 +143,6 @@ persist.timed.enable=true
 
 # Wifi
 persist.data.iwlan.enable=true
+
+# Create zram disk 
+ro.config.zram=true 
