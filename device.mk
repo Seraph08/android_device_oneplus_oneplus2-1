@@ -114,10 +114,6 @@ PRODUCT_PACKAGES += \
     liboverlay \
     libtinyxml
 
-# Doze mode
-PRODUCT_PACKAGES += \
-    OneplusDoze
-
 # Filesystem management tools
 PRODUCT_PACKAGES += \
     e2fsck \
