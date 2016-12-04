@@ -28,8 +28,6 @@ TARGET_OTA_ASSERT_DEVICE := OnePlus2,oneplus2
 
 PLATFORM_PATH := device/oneplus/oneplus2
 
-BOARD_VENDOR := oneplus
-
 # Use Snapdragon LLVM, if available
 TARGET_USE_SDCLANG := true
 
@@ -194,6 +192,9 @@ BOARD_USES_QC_TIME_SERVICES := true
 
 # Gestures
 TARGET_GESTURES_NODE := "/proc/touchpanel/gesture_enable"
+
+# inherit from OnePlus common
+-include device/oneplus/common/BoardConfigCommon.mk
 
 # inherit from the proprietary version
 -include vendor/oneplus/oneplus2/BoardConfigVendor.mk
