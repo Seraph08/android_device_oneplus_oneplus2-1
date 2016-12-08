@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-   Copyright 2016, The CyanogenMod Project
+   Copyright (C) 2016 The CyanogenMod Project
+             (C) 2017 The LineageOS Project
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -20,13 +21,15 @@
          The array should be sorted in the same order as the
          touchscreen gestures advertised by the device's CMHW impl. -->
     <integer-array name="config_defaultTouchscreenGestureActions">
-        <item>4</item>
-        <item>2</item>
-        <item>8</item>
-        <item>9</item>
-        <item>7</item>
         <item>1</item>
-        <item>6</item>
-        <item>3</item>
+        <item>0</item>
+        <item>9</item>
+        <item>8</item>
+        <item>2</item>
+        <item>7</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
     </integer-array>
 </resources>

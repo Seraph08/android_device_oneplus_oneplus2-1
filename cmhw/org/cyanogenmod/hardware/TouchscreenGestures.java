@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2016 The CyanogenMod Project
+ *           (C) 2017 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,26 +39,30 @@ import cyanogenmod.hardware.TouchscreenGesture;
 public class TouchscreenGestures {
 
     private static final String[] GESTURE_PATHS = {
-        "/proc/touchpanel/up_arrow_enable",
-        "/proc/touchpanel/down_arrow_enable",
-        "/proc/touchpanel/left_arrow_enable",
-        "/proc/touchpanel/right_arrow_enable",
-        "/proc/touchpanel/double_swipe_enable",
-        "/proc/touchpanel/letter_o_enable",
-        "/proc/touchpanel/letter_m_enable",
-        "/proc/touchpanel/letter_w_enable",
+        "/proc/touchpanel/draw_v",
+        "/proc/touchpanel/draw_reversed_v",
+        "/proc/touchpanel/draw_right_v",
+        "/proc/touchpanel/draw_left_v",
+        "/proc/touchpanel/draw_circle",
+        "/proc/touchpanel/double_swipe",
+        "/proc/touchpanel/right_swipe",
+        "/proc/touchpanel/left_swipe",
+        "/proc/touchpanel/down_swipe",
+        "/proc/touchpanel/up_swipe"
     };
 
     // Id, name, keycode
     private static final TouchscreenGesture[] TOUCHSCREEN_GESTURES = {
-        new TouchscreenGesture(0, "Up arrow", 252),
-        new TouchscreenGesture(1, "Down arrow", 253),
-        new TouchscreenGesture(2, "Left arrow", 254),
-        new TouchscreenGesture(3, "Right arrow", 255),
-        new TouchscreenGesture(4, "Two finger down swipe", 251),
-        new TouchscreenGesture(5, "Letter O", 250),
-        new TouchscreenGesture(6, "Letter M", 257),
-        new TouchscreenGesture(7, "Letter W", 256),
+        new TouchscreenGesture(0, "down arrow", 250),
+        new TouchscreenGesture(1, "up arrow", 251),
+        new TouchscreenGesture(2, "right arrow", 252),
+        new TouchscreenGesture(3, "left arrow", 253),
+        new TouchscreenGesture(4, "letter o", 254),
+        new TouchscreenGesture(5, "two finger down swipe", 255),
+        new TouchscreenGesture(6, "one finger right swipe", 256),
+        new TouchscreenGesture(7, "one finger left swipe", 257),
+        new TouchscreenGesture(8, "one finger down swipe", 258),
+        new TouchscreenGesture(9, "one finger up swipe", 259)
     };
 
     /**
@@ -96,7 +101,6 @@ public class TouchscreenGestures {
      */
     public static boolean setGestureEnabled(
             final TouchscreenGesture gesture, final boolean state) {
-        final String stateStr = state ? "1" : "0";
-        return FileUtils.writeLine(GESTURE_PATHS[gesture.id], stateStr);
+        return FileUtils.writeLine(GESTURE_PATHS[gesture.id], state ? "1" : "0");
     }
 }
