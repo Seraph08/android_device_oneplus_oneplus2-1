@@ -117,7 +117,7 @@ PRODUCT_PACKAGES += \
 # Doze mode
 PRODUCT_PACKAGES += \
     OneplusDoze
-    
+
 #Android EGL implementation
 PRODUCT_PACKAGES += libGLES_android
 
@@ -209,7 +209,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     power.msm8994
 
-# QCOM 
+# QCOM
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 
 # Enable features in video HAL that can compile only on this platform
