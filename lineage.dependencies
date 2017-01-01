@@ -1,14 +1,34 @@
 [
   {
-    "repository": "android_device_oppo_common",
-    "target_path": "device/oppo/common"
+    "remote":      "github",
+    "repository":  "Seraph08/android_device_oppo_common",
+    "target_path": "device/oppo/common",
+    "revision":    "cm-14.1"
   },
   {
-    "repository": "android_kernel_oneplus_msm8994",
-    "target_path": "kernel/oneplus/msm8994"
+    "remote":      "github",
+    "repository":  "Seraph08/android_kernel_oneplus_msm8994",
+    "target_path": "kernel/oneplus/msm8994",
+    "revision":    "cm-14.1"
   },
   {
-    "repository": "android_packages_resources_devicesettings",
-    "target_path": "packages/resources/devicesettings"
+    "remote":      "github",
+    "repository":  "LineageOS/android_packages_resources_devicesettings",
+    "target_path": "packages/resources/devicesettings",
+    "revision":    "cm-14.1"
+  },
+  {
+    "remote":      "github",
+    "repository":  "TheMuppets/proprietary_vendor_oneplus",
+    "target_path": "vendor/oneplus",
+    "revision":    "cm-14.1"
+  },
+  {
+    "remote":      "github",
+    "repository":  "TheMuppets/proprietary_vendor_qcom_binaries",
+    "target_path": "vendor/qcom/binaries",
+    "revision":    "cm-14.1"
   }
 ]
+
+ 
