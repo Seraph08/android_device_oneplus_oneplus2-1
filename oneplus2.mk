@@ -82,6 +82,12 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 # Haters gonna hate..
 PRODUCT_CHARACTERISTICS := nosdcard
 
+# ANT+
+PRODUCT_PACKAGES += \
+    AntHalService \
+    com.dsi.ant.antradio_library \
+    libantradio
+
 # Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
@@ -114,11 +120,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_platform_info.xml:system/etc/audio_platform_info.xml \
     $(LOCAL_PATH)/audio/mixer_paths.xml:system/etc/mixer_paths.xml
 
-#ANT+ stack
+# Bluetooth
 PRODUCT_PACKAGES += \
-    AntHalService \
-    com.dsi.ant.antradio_library \
-    libantradio
+    android.hardware.bluetooth@1.0-impl
 
 # Bluetooth HAL
 PRODUCT_PACKAGES += \
