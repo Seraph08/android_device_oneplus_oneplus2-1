@@ -497,7 +497,6 @@ vendor/lib64/libsmemlog.so
 bin/netmgrd
 bin/qmuxd
 bin/radish
-bin/rfs_access
 bin/rmt_storage
 etc/data/dsi_config.xml
 etc/data/netmgr_config.xml

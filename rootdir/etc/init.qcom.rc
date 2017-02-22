@@ -169,7 +169,6 @@ on early-boot
 on boot
     start qcom-power
     start rmt_storage
-    start rfs_access
 
     chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
     chown bluetooth net_bt /sys/class/rfkill/rfkill0/type
@@ -695,11 +694,6 @@ service rmt_storage /system/bin/rmt_storage
     class core
     user root
     writepid /dev/cpuset/system-background/tasks
-
-service rfs_access /system/bin/rfs_access
-    class core
-    user root
-    group system net_raw
 
 on property:wc_transport.start_hci=true
     start start_hci_filter
