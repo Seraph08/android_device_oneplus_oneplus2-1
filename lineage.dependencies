@@ -22,13 +22,8 @@
     "repository":  "TheMuppets/proprietary_vendor_oneplus",
     "target_path": "vendor/oneplus",
     "revision":    "cm-14.1"
-  },
-  {
-    "remote":      "github",
-    "repository":  "TheMuppets/proprietary_vendor_qcom_binaries",
-    "target_path": "vendor/qcom/binaries",
-    "revision":    "cm-14.1"
   }
+
 ]
 
  
