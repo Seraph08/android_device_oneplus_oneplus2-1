@@ -13,13 +13,7 @@
   },
   {
     "remote":      "github",
-    "repository":  "LineageOS/android_packages_resources_devicesettings",
-    "target_path": "packages/resources/devicesettings",
-    "revision":    "cm-14.1"
-  },
-  {
-    "remote":      "github",
-    "repository":  "TheMuppets/proprietary_vendor_oneplus",
+    "repository":  "Seraph08/vendor_oneplus",
     "target_path": "vendor/oneplus",
     "revision":    "cm-14.1"
   }
