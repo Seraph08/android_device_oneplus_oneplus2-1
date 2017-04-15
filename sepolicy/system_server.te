@@ -11,3 +11,6 @@ allow system_app qmuxd_socket:dir { add_name write };
 allow system_app qmuxd_socket:sock_file { create setattr write };
 allow system_server unlabeled:file unlink;
 allow system_server user_profile_data_file:dir { read open };
+allow system_server proc:file w_file_perms; 
+allow system_server qemu_hw_mainkeys_prop:property_service set; 
+
