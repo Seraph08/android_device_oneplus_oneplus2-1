@@ -102,7 +102,7 @@ PRODUCT_PACKAGES += \
     libshim_camera \
     libshim_ims-camera \
     sensors.hal.tof \
-    Snap
+    SnapdragonCamera
 
 # Connectivity Engine support (CNE)
 PRODUCT_PACKAGES += \
@@ -140,8 +140,7 @@ PRODUCT_PACKAGES += fs_config_files
 
 # For libandroid
 PRODUCT_PACKAGES += libandroid
-# Gello
-PRODUCT_PACKAGES += Gello
+
 
 # GPS
 PRODUCT_PACKAGES += \

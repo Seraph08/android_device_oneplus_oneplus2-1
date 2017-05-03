@@ -1,1 +1,1 @@
-add_lunch_combo lineage_oneplus2-userdebug
+add_lunch_combo aosp_oneplus2-userdebug
