@@ -32,4 +32,8 @@
 
     <!-- Restart preview for front camera onPictureTaken -->
     <bool name="front_camera_restart_preview_onPictureTaken">true</bool>
+
+  <!-- Enable HAL3 by default -->
+    <bool name="config_use_hal3">true</bool>
+
 </resources>
