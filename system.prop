@@ -175,6 +175,8 @@ ro.qualcomm.cabl=2
 telephony.lteOnCdmaDevice=1
 persist.radio.rat_on=combine
 persist.data.qmi.adb_logmask=0
+ro.ril.svlte1x=false
+ro.ril.svdo=false
 
 # Sensors
 ro.qc.sdk.sensors.gestures=true
