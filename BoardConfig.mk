@@ -192,7 +192,7 @@ TARGET_NO_RPC := true
 # Sensors
 USE_SENSOR_MULTI_HAL := true
 TARGET_USES_IMS := true
-BOARD_HAL_STATIC_LIBRARIES := libhealthd.msm
+LOCAL_HAL_STATIC_LIBRARIES := libhealthd
 
 # Enable dexpreopt to speed boot time
 ifeq ($(HOST_OS),linux)
