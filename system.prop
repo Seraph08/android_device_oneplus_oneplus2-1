@@ -1,5 +1,9 @@
 # system.prop for OnePlus2
 
+# Device
+ro.build.product=OnePlus2
+ro.product.device=OnePlus2
+
 # Audio
 audio.offload.video=true
 persist.audio.fluence.voicecall=true
