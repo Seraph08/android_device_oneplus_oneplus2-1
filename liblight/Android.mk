@@ -21,7 +21,7 @@ LOCAL_SRC_FILES := lights.c
 LOCAL_MODULE_RELATIVE_PATH    := hw
 LOCAL_SHARED_LIBRARIES := liblog libcutils
 
-LOCAL_MODULE := lights.qcom
+LOCAL_MODULE := lights.msm8994
 LOCAL_MODULE_TAGS := optional
 
 include $(BUILD_SHARED_LIBRARY)
