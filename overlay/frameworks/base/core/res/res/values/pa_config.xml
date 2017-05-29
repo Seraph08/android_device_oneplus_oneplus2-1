@@ -44,6 +44,7 @@
          This needs to match the constants in
          policy/src/com/android/internal/policy/impl/PhoneWindowManager.java
     -->
+    <add-resource type="integer" name="config_longPressOnHardwareHomeBehavior"></add-resource>
     <integer name="config_longPressOnHardwareHomeBehavior">3</integer>
 
     <!-- Keycodes of gestures. If the gesture is not supported set it to 0. -->
@@ -118,7 +119,10 @@
     <!-- Default value for proximity check on screen wake
          NOTE ! - Enable for devices that have a fast response proximity sensor (ideally < 300ms)
     -->
+    <add-resource type="bool" name="config_proximityCheckOnWake"></add-resource>
     <bool name="config_proximityCheckOnWake">true</bool>
+    <add-resource type="integer" name="config_proximityCheckTimeout"></add-resource>
     <integer name="config_proximityCheckTimeout">100</integer>
+    <add-resource type="bool" name="config_proximityCheckOnWakeEnabledByDefault"></add-resource>
     <bool name="config_proximityCheckOnWakeEnabledByDefault">true</bool>
 </resources>
