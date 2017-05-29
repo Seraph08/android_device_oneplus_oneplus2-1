@@ -36,7 +36,7 @@
 
 void init_variant_properties() {
 
-    std::string device = property_get("ro.aosp.device");
+    std::string device = property_get("ro.board.platform");
     std::string rf_version;
 
     if (device != "OnePlus2")
