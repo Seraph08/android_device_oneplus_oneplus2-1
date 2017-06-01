@@ -106,18 +106,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_effects.conf:system/vendor/etc/audio_effects.conf \
     $(LOCAL_PATH)/audio/audio_output_policy.conf:system/vendor/etc/audio_output_policy.conf \
     $(LOCAL_PATH)/audio/audio_platform_info.xml:system/etc/audio_platform_info.xml \
-    $(LOCAL_PATH)/audio/audio_platform_info_i2s.xml:system/etc/audio_platform_info_i2s.xml \
     $(LOCAL_PATH)/audio/audio_policy.conf:system/etc/audio_policy.conf \
     $(LOCAL_PATH)/audio/listen_platform_info.xml:system/etc/listen_platform_info.xml \
     $(LOCAL_PATH)/audio/mixer_paths.xml:system/etc/mixer_paths.xml \
-    $(LOCAL_PATH)/audio/mixer_paths_i2s.xml:system/etc/mixer_paths_i2s.xml \
     $(LOCAL_PATH)/audio/sound_trigger_mixer_paths.xml:system/etc/sound_trigger_mixer_paths.xml \
     $(LOCAL_PATH)/audio/sound_trigger_platform_info.xml:system/etc/sound_trigger_platform_info.xml
-
-#battery_monitor
-PRODUCT_PACKAGES += \
-    battery_monitor \
-    battery_shutdown
 
 # ANT+
 PRODUCT_PACKAGES += \
@@ -125,19 +118,12 @@ PRODUCT_PACKAGES += \
     com.dsi.ant.antradio_library \
     libantradio
 
-# Reduce client buffer size for fast audio output tracks
-PRODUCT_PROPERTY_OVERRIDES += af.fast_track_multiplier=1
-
-# Low latency audio buffer size in frames
-PRODUCT_PROPERTY_OVERRIDES += audio_hal.period_size=192
-
 # Camera
 PRODUCT_PACKAGES += \
     camera.msm8994 \
     libshim_camera \
     libshim_ims-camera \
     sensors.hal.tof \
-    Camera2 \
     SnapdragonCamera
 
 # Connectivity Engine support (CNE)
@@ -157,10 +143,8 @@ PRODUCT_PACKAGES += \
     libtinyxml
 
 # Doze mode
-PRODUCT_PACKAGES += OneplusDoze
-
-#Android EGL implementation
-PRODUCT_PACKAGES += libGLES_android
+PRODUCT_PACKAGES += \
+    OneplusDoze
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
@@ -169,14 +153,12 @@ PRODUCT_PACKAGES += \
     setup_fs
 
 # Fingerprint sensor
-PRODUCT_PACKAGES += fingerprintd
+PRODUCT_PACKAGES += \
+    fingerprintd
 
 # For android_filesystem_config.h
-PRODUCT_PACKAGES += fs_config_files
-
-# For libandroid
-PRODUCT_PACKAGES += libandroid
-
+PRODUCT_PACKAGES += \
+    fs_config_files
 
 # GPS
 PRODUCT_PACKAGES += \
@@ -208,7 +190,12 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/synaptics.kl:system/usr/keylayout/synaptics.kl
 
 # Lights
-PRODUCT_PACKAGES += lights.msm8994
+PRODUCT_PACKAGES += \
+    lights.msm8994
+
+# LiveDisplay native
+PRODUCT_PACKAGES += \
+    libjni_livedisplay
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -242,20 +229,17 @@ PRODUCT_PACKAGES += \
     libstagefright_soft_flacdec
 
 # Power
-PRODUCT_PACKAGES += power.msm8994
-
-# QCOM
-TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
-
-# Enable features in video HAL that can compile only on this platform
-TARGET_USES_MEDIA_EXTENSIONS := true
+PRODUCT_PACKAGES += \
+    power.msm8994
 
 # Ramdisk
-PRODUCT_PACKAGES += init.qcom.bt.sh
+PRODUCT_PACKAGES += \
+    init.qcom.bt.sh \
+    init.zram.sh
 
 PRODUCT_PACKAGES += \
     fstab.qcom \
-    init.qcom.post_boot.sh \
+    init.qcom.power.rc \
     init.qcom.rc \
     init.qcom.sh \
     init.qcom.usb.rc \
@@ -265,29 +249,23 @@ PRODUCT_PACKAGES += \
 # RIL
 PRODUCT_PACKAGES += \
     librmnetctl \
-    libxml2 \
-    libprotobuf-cpp-full
+    libxml2
 
 # Sensors
 PRODUCT_PACKAGES += \
     sensors.msm8994 \
     sensors.ssc.wrapper
 
-# Thermal config
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/thermal-engine.conf:system/etc/thermal-engine.conf \
-    $(LOCAL_PATH)/configs/perf-profile0.conf:system/vendor/etc/perf-profile0.conf \
-    $(LOCAL_PATH)/configs/perf-profile1.conf:system/vendor/etc/perf-profile1.conf \
-    $(LOCAL_PATH)/configs/perf-profile2.conf:system/vendor/etc/perf-profile2.conf \
-    $(LOCAL_PATH)/configs/perf-profile3.conf:system/vendor/etc/perf-profile3.conf \
-    $(LOCAL_PATH)/configs/perf-profile4.conf:system/vendor/etc/perf-profile4.conf \
-    $(LOCAL_PATH)/configs/perf-profile5.conf:system/vendor/etc/perf-profile5.conf
+    $(LOCAL_PATH)/configs/sensors/hals.conf:system/etc/sensors/hals.conf
 
 # USB
-PRODUCT_PACKAGES += com.android.future.usb.accessory
+PRODUCT_PACKAGES += \
+    com.android.future.usb.accessory
 
 # VR
-PRODUCT_PACKAGES += vr.msm8994
+PRODUCT_PACKAGES += \
+    vr.msm8994
 
 # MIDI feature
 PRODUCT_COPY_FILES += \
@@ -295,14 +273,13 @@ PRODUCT_COPY_FILES += \
 
 # WiFi
 PRODUCT_PACKAGES += \
+    ipacm \
+    ipacm-diag \
+    IPACM_cfg.xml \
     hostapd \
     libwpa_client \
     wpa_supplicant \
     wpa_supplicant.conf
-
-ifneq ($(WLAN_CHIPSET),)
-PRODUCT_PACKAGES += $(WLAN_CHIPSET)_wlan.ko
-endif
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/hostapd.accept:system/etc/hostapd/hostapd.accept \

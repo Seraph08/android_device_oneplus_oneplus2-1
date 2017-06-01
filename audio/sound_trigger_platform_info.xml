@@ -38,3 +38,4 @@
     <ctrl name="enable_failure_detection" value="false" />
     <ctrl name="enable_transition" value="false" />
 </sound_trigger_platform_info>
+
