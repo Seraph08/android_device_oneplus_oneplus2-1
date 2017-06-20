@@ -33,6 +33,8 @@ TARGET_USE_SDCLANG := true
 # Assertions
 TARGET_BOARD_INFO_FILE ?= $(PLATFORM_PATH)/android-info.txt
 
+-include $(QCPATH)/common/msm8994/BoardConfigVendor.mk
+
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := MSM8994
 TARGET_NO_BOOTLOADER := true
