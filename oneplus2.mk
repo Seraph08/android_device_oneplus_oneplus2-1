@@ -225,6 +225,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     power.msm8994
 
+# QC AV Enhancements
+PRODUCT_PACKAGES += \
+    libqcmediaplayer \
+    qcmediaplayer \
+    libextmedia_jni
+
 # Ramdisk
 PRODUCT_PACKAGES += \
     init.qcom.bt.sh \
