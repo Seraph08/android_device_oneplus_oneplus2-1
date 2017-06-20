@@ -16,6 +16,8 @@
 
 $(call inherit-product-if-exists, vendor/oneplus/oneplus2/oneplus2-vendor.mk)
 
+TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
+TARGET_USES_MEDIA_EXTENSIONS := true
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
