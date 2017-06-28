@@ -402,7 +402,13 @@
         <item>1300</item>     <!-- CPUBOOST MIN_FREQ resource value-->
      </integer-array>
 
-
     <!-- Migrate threads from A53 to A57 on app launch -->
     <integer name="launchboost_schedboost_param">0x1E01</integer>
+
+    <!-- Whether notify fingerprint client of successful cancelled authentication -->
+    <bool name="config_notifyClientOnFingerprintCancelSuccess">true</bool>
+
+    <!-- If enabled, capacitive keys will only light up when pressed.
+         Otherwise, the buttons will light up whenever the user interacts with the device -->
+    <bool name="config_buttonLightOnKeypressOnly">true</bool>
 </resources>
