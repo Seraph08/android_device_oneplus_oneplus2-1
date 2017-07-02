@@ -57,8 +57,14 @@ on enable-low-power
     write /sys/devices/system/cpu/cpu4/cpufreq/interactive/max_freq_hysteresis 80000
     write /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq 384000
 
-    # Re-enable thermal and BCL hotplug
-    write /sys/module/msm_thermal/core_control/enabled 1
+    # (Don't) Re-enable thermal and BCL hotplug
+    write /sys/module/msm_thermal/core_control/enabled 0
+    write /sys/devices/soc.0/qcom,bcl.62/mode "disable"
+    write /sys/devices/soc.0/qcom,bcl.62/hotplug_mask 192
+    write /sys/devices/soc.0/qcom,bcl.62/hotplug_soc_mask 240
+    write /sys/devices/soc.0/qcom,bcl.62/mode "enable"
+
+    # Enable low power modes
     write /sys/module/lpm_levels/parameters/sleep_disabled 0
 
     # Restore CPU 4 max freq from msm_performance
