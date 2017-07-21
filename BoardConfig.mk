@@ -150,6 +150,7 @@ TARGET_SPECIFIC_HEADER_PATH := $(PLATFORM_PATH)/include
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_oneplus2
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
+TARGET_LIBINIT_DEFINES_FILE := device/oneplus/oneplus2/init/init_oneplus2.cpp
 
 # Sensors
 USE_SENSOR_MULTI_HAL := true
@@ -192,7 +193,6 @@ TARGET_RECOVERY_FSTAB := $(PLATFORM_PATH)/rootdir/etc/fstab.qcom
 BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy
 
 # Gestures
-TARGET_TAP_TO_WAKE_NODE := "/proc/touchpanel/double_tap"
 TARGET_GESTURES_NODE := "/proc/touchpanel/gesture_enable"
 
 # inherit from the proprietary version
