@@ -30,6 +30,9 @@ PLATFORM_PATH := device/oneplus/oneplus2
 
 BOARD_VENDOR := oneplus
 
+# Inherit from qcom-common
+include device/qcom/common/BoardConfigCommon.mk
+
 # Use Snapdragon LLVM, if available
 TARGET_USE_SDCLANG := true
 
