@@ -16,6 +16,7 @@
 
 $(call inherit-product-if-exists, vendor/oneplus/oneplus2/oneplus2-vendor.mk)
 $(call inherit-product, device/oneplus/oneplus2/common64.mk)
+$(call inherit-product, device/oneplus/oneplus2/common.mk)
 
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 TARGET_USES_MEDIA_EXTENSIONS := true
