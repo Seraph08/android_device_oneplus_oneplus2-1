@@ -1,6 +1,6 @@
 $(call inherit-product, device/oneplus/oneplus2/base.mk)
 
-PRODUCT_BRAND := oneplus
+PRODUCT_BRAND := OnePlus
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.extension_library=libqti-perfd-client.so \
