@@ -15,8 +15,8 @@
 #
 
 $(call inherit-product-if-exists, vendor/oneplus/oneplus2/oneplus2-vendor.mk)
-$(call inherit-product, device/oneplus/oneplus2/common64.mk)
-$(call inherit-product, device/oneplus/oneplus2/common.mk)
+$(call inherit-product-if-exists, $(QCPATH)/common/config/device-vendor.mk)
+$(call inherit-product, device/oneplus/oneplus2/base.mk)
 
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 TARGET_USES_MEDIA_EXTENSIONS := true
@@ -95,7 +95,7 @@ PRODUCT_PACKAGES += \
     libqcomvisualizer \
     libqcomvoiceprocessing \
     tinymix
-    
+
 # Amplifier
 PRODUCT_PACKAGES += \
     audio_amplifier.msm8994
@@ -104,7 +104,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_effects.conf:system/vendor/etc/audio_effects.conf \
     $(LOCAL_PATH)/audio/audio_output_policy.conf:system/vendor/etc/audio_output_policy.conf \
     $(LOCAL_PATH)/audio/audio_platform_info.xml:system/etc/audio_platform_info.xml \
-    $(LOCAL_PATH)/audio/mixer_paths.xml:system/etc/mixer_paths.xml 
+    $(LOCAL_PATH)/audio/mixer_paths.xml:system/etc/mixer_paths.xml
 
 # ANT+
 PRODUCT_PACKAGES += \
@@ -199,7 +199,7 @@ PRODUCT_PACKAGES += \
     libOmxSwVencHevc \
     libOmxVidcCommon \
     libstagefright_soft_flacenc
-    
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_codecs_performance.xml:system/etc/media_codecs_performance.xml
 
@@ -212,7 +212,7 @@ PRODUCT_PACKAGES += \
     libqcmediaplayer \
     qcmediaplayer \
     libextmedia_jni
-    
+
 # QMI
 PRODUCT_PACKAGES += \
     dsi_config.xml \
@@ -237,10 +237,6 @@ PRODUCT_PACKAGES += \
     librmnetctl \
     libxml2
 
-PRODUCT_BOOT_JARS += \
-    qcnvitems \
-    qcrilhook
-
 # Sensors
 PRODUCT_PACKAGES += \
     sensors.msm8994
@@ -248,6 +244,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sensors/hals.conf:system/etc/sensors/hals.conf
 
+PRODUCT_PACKAGES += tcmiface
+PRODUCT_PACKAGES += telephony-ext
 
 # USB
 PRODUCT_PACKAGES += \
@@ -273,7 +271,7 @@ PRODUCT_PACKAGES += \
     hostapd_default.conf \
     hostapd.accept \
     hostapd.deny
-    
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/hostapd.accept:system/etc/hostapd/hostapd.accept \
     $(LOCAL_PATH)/wifi/hostapd.conf:system/etc/hostapd/hostapd_default.conf \

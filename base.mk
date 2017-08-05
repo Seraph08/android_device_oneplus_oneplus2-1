@@ -248,9 +248,9 @@ IPROUTE2 := ip
 IPROUTE2 += libiprouteutil
 
 #IPACM
-IPACM += ipacm
-IPACM += IPACM_cfg.xml
-IPACM += ipacm-diag
+#IPACM += ipacm
+#IPACM += IPACM_cfg.xml
+#IPACM += ipacm-diag
 
 #IPTABLES
 IPTABLES := libiptc
@@ -346,7 +346,7 @@ LIBCOPYBIT += copybit.msm7627a
 
 #LIBGESTURES
 LIBGESTURES := libgestures
-LIBGESTURES += gestures.msm8960
+LIBGESTURES += gestures.msm8994
 
 #LIBGRALLOC
 LIBGRALLOC := gralloc.default
@@ -604,7 +604,7 @@ VT_JNI += libimscamera_jni
 VT_QTI_PERMISSIONS := qti_permissions.xml
 
 #IMS Extension module for Android Telephony
-IMS_EXT := ims-ext-common
+#IMS_EXT := ims-ext-common
 
 #CARRIER ONE RCS
 CARRIER_ONE_RCS := rcscommon
@@ -773,7 +773,7 @@ PRODUCT_PACKAGES += \
     setup_fs
 
 # Qcril configuration file
-PRODUCT_PACKAGES += qcril.db
+#PRODUCT_PACKAGES += qcril.db
 
 # Flatland
 PRODUCT_PACKAGES += flatland
@@ -785,10 +785,10 @@ PRODUCT_PACKAGES += librecovery_updater_msm
 PRODUCT_PACKAGES += vcard
 
 # tcmiface for tcm support
-PRODUCT_PACKAGES += tcmiface
+#PRODUCT_PACKAGES += tcmiface
 
 # healthd libaray expanded for mode charger
-PRODUCT_PACKAGES += libhealthd.msm
+#PRODUCT_PACKAGES += libhealthd.msm
 
 #intialise PRODUCT_PACKAGES_DEBUG list for debug modules
 PRODUCT_PACKAGES_DEBUG := init.qcom.testscripts.sh

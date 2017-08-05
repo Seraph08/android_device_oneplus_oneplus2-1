@@ -28,10 +28,7 @@ TARGET_OTA_ASSERT_DEVICE := OnePlus2,oneplus2
 
 PLATFORM_PATH := device/oneplus/oneplus2
 
-BOARD_VENDOR := oneplus
-
-# Inherit from qcom-common
-include device/qcom/common/BoardConfigCommon.mk
+BOARD_VENDOR := OnePlus
 
 # Use Snapdragon LLVM, if available
 TARGET_USE_SDCLANG := true
@@ -152,7 +149,8 @@ TARGET_SPECIFIC_HEADER_PATH := $(PLATFORM_PATH)/include
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_oneplus2
-TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
+TARGET_RECOVERY_DEVICE_MODULES := libinit_oneplus2
+TARGET_LIBINIT_DEFINES_FILE := device/oneplus/oneplus2/init/init_oneplus2.cpp
 
 # Sensors
 USE_SENSOR_MULTI_HAL := true
