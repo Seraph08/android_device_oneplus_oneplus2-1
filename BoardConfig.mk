@@ -21,9 +21,7 @@
 # definition file).
 #
 
-# Inherit from qcom-common
-include device/qcom/common/BoardConfigCommon.mk
-
+# Assertions
 TARGET_OTA_ASSERT_DEVICE := OnePlus2,oneplus2
 
 PLATFORM_PATH := device/oneplus/oneplus2
@@ -116,12 +114,18 @@ BOARD_CHARGER_DISABLE_INIT_BLANK := true
 
 # CNE and DPM
 TARGET_LDPRELOAD := libNimsWrap.so
-BOARD_USES_QCNE := true
+#BOARD_USES_QCNE := true
 
 # Cpusets
 ENABLE_CPUSETS := true
 
 BOARD_EGL_CFG := $(PLATFORM_PATH)/egl.cfg
+
+# Gestures
+TARGET_GESTURES_NODE := "/proc/touchpanel/gesture_enable"
+
+# Releasetools extension for shipping firmware
+TARGET_RELEASETOOLS_EXTENSIONS := device/oneplus/oneplus2
 
 # GPS
 TARGET_NO_RPC := true
@@ -148,7 +152,9 @@ SF_VSYNC_EVENT_PHASE_OFFSET_NS := 6000000
 TARGET_SPECIFIC_HEADER_PATH := $(PLATFORM_PATH)/include
 
 # Init
+TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_oneplus2
+TARGET_PLATFORM_DEVICE_BASE := /devices/soc/
 TARGET_RECOVERY_DEVICE_MODULES := libinit_oneplus2
 TARGET_LIBINIT_DEFINES_FILE := device/oneplus/oneplus2/init/init_oneplus2.cpp
 
