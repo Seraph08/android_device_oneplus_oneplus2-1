@@ -96,4 +96,9 @@
     <integer name="config_proximityCheckTimeout">100</integer>
     <add-resource type="bool" name="config_proximityCheckOnWakeEnabledByDefault"></add-resource>
     <bool name="config_proximityCheckOnWakeEnabledByDefault">true</bool>
+
+ <!-- Defines the sysfs attribute path used by pocket bridge
+        to communicate pocket state to the pocket judge kernel driver. -->
+    <string name="config_pocketBridgeSysfsInpocket">/sys/kernel/pocket_judge/inpocket</string>
+
 </resources>
