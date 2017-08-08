@@ -21,13 +21,6 @@ $(call inherit-product, device/oneplus/oneplus2/base.mk)
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 TARGET_USES_MEDIA_EXTENSIONS := true
 
-# copy customized media_profiles and media_codecs xmls for 8994
-ifeq ($(TARGET_ENABLE_QC_AV_ENHANCEMENTS), true)
-PRODUCT_COPY_FILES += $(LOCAL_PATH)/media/media_profiles.xml:system/etc/media_profiles.xml \
-		      $(LOCAL_PATH)/media/media_codecs.xml:system/etc/media_codecs.xml \
-                      $(LOCAL_PATH)/media/media_codecs_performance.xml:system/etc/media_codecs_performance.xml
-endif  #TARGET_ENABLE_QC_AV_ENHANCEMENTS
-
 # Audio configuration file
 -include $(TOPDIR)hardware/qcom/audio/configs/msm8994/msm8994.mk
 
@@ -189,7 +182,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/fpc1020.kl:system/usr/keylayout/fpc1020.kl \
     $(LOCAL_PATH)/keylayout/synaptics.kl:system/usr/keylayout/synaptics.kl
-
 
 #Android EGL implementation
 PRODUCT_PACKAGES += libGLES_android
