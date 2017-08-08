@@ -34,7 +34,9 @@
 #include "log.h"
 #include "util.h"
 
-void init_variant_properties() {
+void vendor_load_properties()
+{
+    std::string platform, rf_version, device;
 
     UNUSED(msm_id);
     UNUSED(msm_ver);
@@ -60,4 +62,6 @@ void init_variant_properties() {
         property_set("telephony.lteOnCdmaDevice", "1");
         property_set("ro.telephony.default_network", "9,9");
     }
+    device = property_get("ro.product.device");
+    INFO("Found rf_version : %s setting build properties for %s device\n", rf_version.c_str(), device.c_str());
 }
