@@ -14,6 +14,7 @@
 # limitations under the License.
 #
 
+$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product-if-exists, vendor/oneplus/oneplus2/oneplus2-vendor.mk)
 $(call inherit-product-if-exists, $(QCPATH)/common/config/device-vendor.mk)
 $(call inherit-product, device/oneplus/oneplus2/base.mk)
@@ -128,6 +129,11 @@ PRODUCT_PACKAGES += \
     memtrack.msm8994 \
     liboverlay \
     libtinyxml
+    
+# Data
+PRODUCT_PACKAGES += \
+    librmnetctl \
+    rmnetcli
 
 # Doze mode
 PRODUCT_PACKAGES += \
@@ -142,6 +148,11 @@ PRODUCT_PACKAGES += \
 # Fingerprint sensor
 PRODUCT_PACKAGES += \
     fingerprintd
+    
+# FM
+PRODUCT_PACKAGES += \
+    FMRadio \
+    libfmjni
 
 # For android_filesystem_config.h
 PRODUCT_PACKAGES += \
@@ -234,6 +245,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     librmnetctl \
     libxml2 \
+    libcnefeatureconfig \
     libprotobuf-cpp-full
 
 # Sensors
