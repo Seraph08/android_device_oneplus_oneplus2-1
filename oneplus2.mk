@@ -88,10 +88,10 @@ PRODUCT_CHARACTERISTICS := nosdcard
 PRODUCT_PACKAGES += \
     audiod \
     audio.a2dp.default \
-    audio.primary.msm8994 \
+    audio.primary.qcom \
     audio.r_submix.default \
     audio.usb.default \
-    audio_policy.msm8994 \
+    audio_policy.qcom \
     libaudio-resampler \
     libqcompostprocbundle \
     libqcomvisualizer \
@@ -100,7 +100,7 @@ PRODUCT_PACKAGES += \
 
 # Amplifier
 PRODUCT_PACKAGES += \
-    audio_amplifier.msm8994
+    audio_amplifier.qcom
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_effects.conf:system/vendor/etc/audio_effects.conf \
@@ -116,7 +116,7 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    camera.msm8994 \
+    camera.qcom \
     libshim_camera \
     libshim_ims-camera \
     sensors.hal.tof \
@@ -124,10 +124,10 @@ PRODUCT_PACKAGES += \
 
 # Display
 PRODUCT_PACKAGES += \
-    copybit.msm8994 \
-    gralloc.msm8994 \
-    hwcomposer.msm8994 \
-    memtrack.msm8994 \
+    copybit.qcom \
+    gralloc.qcom \
+    hwcomposer.qcom \
+    memtrack.qcom \
     liboverlay \
     libtinyxml
     
@@ -161,7 +161,7 @@ PRODUCT_PACKAGES += \
 
 # GPS
 PRODUCT_PACKAGES += \
-    gps.msm8994 \
+    gps.qcom \
     flp.conf \
     gps.conf \
     izat.conf \
@@ -191,7 +191,7 @@ PRODUCT_COPY_FILES += \
     
 # Keystore
 PRODUCT_PACKAGES += \
-    keystore.msm8994
+    keystore.qcom
 
 #Android EGL implementation
 PRODUCT_PACKAGES += libGLES_android
@@ -255,7 +255,7 @@ PRODUCT_PACKAGES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
-    sensors.msm8994
+    sensors.qcom
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sensors/hals.conf:system/etc/sensors/hals.conf
@@ -269,7 +269,7 @@ PRODUCT_PACKAGES += \
 
 # VR
 PRODUCT_PACKAGES += \
-    vr.msm8994
+    vr.qcom
 
 PRODUCT_PACKAGES += \
     ipacm \
