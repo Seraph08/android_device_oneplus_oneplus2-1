@@ -270,23 +270,17 @@ PRODUCT_PACKAGES += \
 # VR
 PRODUCT_PACKAGES += \
     vr.qcom
+    
+ifneq ($(WLAN_CHIPSET),)
+PRODUCT_PACKAGES += $(WLAN_CHIPSET)_wlan.ko
+endif
 
+# WiFi
 PRODUCT_PACKAGES += \
-    ipacm \
-    ipacm-diag \
-    IPACM_cfg.xml \
-    libqsap_sdk \
-    libQWiFiSoftApCfg \
-    libwpa_client \
     hostapd \
-    dhcpcd.conf \
+    libwpa_client \
     wpa_supplicant \
-    wpa_supplicant.conf \
-    wpa_supplicant_overlay.conf \
-    p2p_supplicant_overlay.conf \
-    hostapd_default.conf \
-    hostapd.accept \
-    hostapd.deny
+    wpa_supplicant.conf
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/hostapd.accept:system/etc/hostapd/hostapd.accept \
