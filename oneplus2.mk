@@ -16,8 +16,6 @@
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product-if-exists, vendor/oneplus/oneplus2/oneplus2-vendor.mk)
-$(call inherit-product-if-exists, device/oneplus/oneplus2/device-vendor.mk)
-$(call inherit-product-if-exists, device/oneplus/oneplus2/BoardConfigVendor.mk)
 $(call inherit-product, device/oneplus/oneplus2/base.mk)
 
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
