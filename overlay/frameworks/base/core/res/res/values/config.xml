@@ -403,6 +403,7 @@
      </integer-array>
 
     <!-- Migrate threads from A53 to A57 on app launch -->
+    <add-resource type="integer" name="launchboost_schedboost_param"></add-resource>
     <integer name="launchboost_schedboost_param">0x1E01</integer>
 
     <!-- Whether notify fingerprint client of successful cancelled authentication -->
