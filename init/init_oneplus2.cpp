@@ -34,13 +34,13 @@
 #include "log.h"
 #include "util.h"
 
-void vendor_load_properties()
-{
-    std::string platform, rf_version, device;
+void init_variant_properties() {
 
-    UNUSED(msm_id);
-    UNUSED(msm_ver);
-    UNUSED(board_type);
+    std::string device = property_get("ro.pa.device");
+    std::string rf_version;
+
+    if (device != "oneplus2")
+        return;
 
     rf_version = property_get("ro.boot.rf_v1");
 
@@ -62,6 +62,8 @@ void vendor_load_properties()
         property_set("telephony.lteOnCdmaDevice", "1");
         property_set("ro.telephony.default_network", "9,9");
     }
-    device = property_get("ro.product.device");
-    INFO("Found rf_version : %s setting build properties for %s device\n", rf_version.c_str(), device.c_str());
+}
+
+void vendor_load_properties() {
+    init_variant_properties();
 }
