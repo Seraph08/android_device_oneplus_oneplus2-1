@@ -232,9 +232,6 @@ vendor/lib64/libvendorconn.so
 vendor/lib64/libwqe.so
 vendor/lib64/libxml.so
 
-# Display calibration
--etc/pp_calib_data_jd35695_1080p_cmd_mode_dsi_panel.xml
-
 # DPM
 bin/dpmd
 etc/dpm/dpm.conf
@@ -244,53 +241,7 @@ etc/permissions/dpmapi.xml
 framework/com.qti.dpmframework.jar
 framework/dpmapi.jar
 framework/tcmclient.jar
--priv-app/dpmserviceapp/dpmserviceapp.apk
-vendor/lib/libdpmctmgr.so
-vendor/lib/libdpmfdmgr.so
-vendor/lib/libdpmframework.so
-vendor/lib/libdpmnsrm.so
-vendor/lib/libdpmtcm.so
-vendor/lib64/libdpmctmgr.so
-vendor/lib64/libdpmfdmgr.so
-vendor/lib64/libdpmframework.so
-vendor/lib64/libdpmnsrm.so
-vendor/lib64/libdpmtcm.so
-
-# CNE
-bin/cnd
-etc/cne/SwimConfig.xml
-etc/cne/andsfCne.xml
-etc/permissions/ConnectivityExt.xml
-etc/permissions/cneapiclient.xml
-etc/permissions/com.quicinc.cne.xml
-framework/ConnectivityExt.jar
-framework/cneapiclient.jar
-framework/com.quicinc.cne.jar
--priv-app/CNEService/CNEService.apk
-vendor/lib/libNimsWrap.so
-vendor/lib/libcne.so
-vendor/lib/libcneapiclient.so
-vendor/lib/libcneconn.so
-vendor/lib/libcneqmiutils.so
-vendor/lib/libvendorconn.so
-vendor/lib/libwqe.so
-vendor/lib/libxml.so
-vendor/lib64/libNimsWrap.so
-vendor/lib64/libcne.so
-vendor/lib64/libcneapiclient.so
-vendor/lib64/libcneconn.so
-vendor/lib64/libcneqmiutils.so
-vendor/lib64/libvendorconn.so
-vendor/lib64/libwqe.so
-vendor/lib64/libxml.so
-
-# DPM
-bin/dpmd
-etc/dpm/dpm.conf
-etc/dpm/nsrm/NsrmConfiguration.xml
-etc/permissions/dpmapi.xml
--framework/com.qti.dpmframework.jar
--framework/dpmapi.jar
+-priv-app/dpmserviceapp/dpmserviceapp.apk|27f91229cdbcec87edaf23c6b821c64a108dad83
 vendor/lib/libdpmctmgr.so
 vendor/lib/libdpmfdmgr.so
 vendor/lib/libdpmframework.so
@@ -322,12 +273,9 @@ lib/lib_fpc_tac_shared.so
 lib64/hw/fingerprint.msm8994.so
 lib64/lib_fpc_tac_shared.so
 
-# Fingerprint sensor
-etc/firmware/fingerprints.b00
-etc/firmware/fingerprints.b01
-etc/firmware/fingerprints.b02
-etc/firmware/fingerprints.b03
-etc/firmware/fingerprints.mdt
+# Gatekeeper
+vendor/lib/hw/gatekeeper.msm8994.so
+vendor/lib64/hw/gatekeeper.msm8994.so
 
 # GPS
 bin/loc_launcher
@@ -499,7 +447,7 @@ vendor/lib64/libmm-qdcm.so
 
 # QMI
 bin/irsc_util
-vendor/lib/libconnctrl.so
+etc/permissions/qti_permissions.xml
 -vendor/lib/libdiag.so
 vendor/lib/libdsi_netctrl.so
 -vendor/lib/libdsutils.so
@@ -534,9 +482,11 @@ vendor/lib64/libqmi_encdec.so
 vendor/lib64/libsmemlog.so
 
 # Radio
--app/fastdormancy/fastdormancy.apk
--app/shutdownlistener/shutdownlistener.apk
--priv-app/QtiTelephonyService/QtiTelephonyService.apk
+-app/datastatusnotification/datastatusnotification.apk|d5b8dbdfb9010758dffec92851937ded0bcca43b
+-app/fastdormancy/fastdormancy.apk|3a7ba6ce1796fea35932b68a465071a1db72fef1
+-app/QtiTelephonyService/QtiTelephonyService.apk|b3bd4921c583936d82d40582bde113fd58622efb
+-app/shutdownlistener/shutdownlistener.apk|5423f30ebab40e4a5b6609048681e060531e1eea
+bin/ipacm-diag
 bin/netmgrd
 bin/qmuxd
 bin/radish
@@ -547,12 +497,11 @@ etc/data/netmgr_config.xml
 etc/data/qmi_config.xml
 etc/permissions/qcnvitems.xml
 etc/permissions/qcrilhook.xml
-etc/permissions/qti_telephony_common.xml
 etc/permissions/telephonyservice.xml
--framework/qcnvitems.jar
--framework/qcrilhook.jar
--framework/qti-telephony-common.jar
--framework/QtiTelephonyServicelibrary.jar
+-framework/qcnvitems.jar|8f1a22639392cef4e62bde005430a14bfa42d17e
+-framework/qcrilhook.jar|e94696ceea03cd31e159dc7fc10c5d694fe9fd94
+framework/qti-telephony-common.jar|fbd9aa168759bca89327643a23a7d32aaa78f79a
+framework/QtiTelephonyServicelibrary.jar|1d4ff53f9229caaa91fe3994757bcd359a18b756
 lib64/libparam.so
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk|8d6a447cc4ee0ca78f6abb042b484c52775db9ed
 vendor/bin/qti
@@ -615,6 +564,7 @@ vendor/lib64/libsensor_user_cal.so
 vendor/lib64/sensors.ssc.so
 
 # Thermal
+etc/thermal-engine.conf
 vendor/bin/thermal-engine
 vendor/lib/libthermalclient.so
 vendor/lib64/libthermalclient.so
