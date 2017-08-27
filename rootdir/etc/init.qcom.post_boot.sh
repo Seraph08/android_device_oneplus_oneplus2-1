@@ -59,12 +59,12 @@ case "$target" in
          echo "interactive" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
          echo 1 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/use_sched_load
          echo 1 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/use_migration_notif
-         echo "19000 960000:39000 1248000:29000" > /sys/devices/system/cpu/cpu0/cpufreq/interactive/above_hispeed_delay
-         echo 99 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load
-         echo 19000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_rate
+         echo 19000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/above_hispeed_delay
+         echo 90 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load
+         echo 20000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_rate
          echo 960000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/hispeed_freq
          echo 1 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/io_is_busy
-         echo "80 960000:95 1248000:99" > /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads
+         echo 80 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads
          echo 40000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/min_sample_time
          echo 80000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/max_freq_hysteresis
          echo 384000 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
@@ -75,11 +75,11 @@ case "$target" in
          echo 1 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/use_sched_load
          echo 1 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/use_migration_notif
          echo "19000 1400000:39000 1700000:19000" > /sys/devices/system/cpu/cpu4/cpufreq/interactive/above_hispeed_delay
-         echo 95 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/go_hispeed_load
-         echo 19000 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/timer_rate
+         echo 90 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/go_hispeed_load
+         echo 20000 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/timer_rate
          echo 1248000 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/hispeed_freq
          echo 1 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/io_is_busy
-         echo "90 1248000:95 1800000:70" > /sys/devices/system/cpu/cpu4/cpufreq/interactive/target_loads
+         echo "85 1500000:90 1800000:70" > /sys/devices/system/cpu/cpu4/cpufreq/interactive/target_loads
          echo 40000 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/min_sample_time
          echo 80000 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/max_freq_hysteresis
          echo 384000 > /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq
@@ -109,13 +109,13 @@ case "$target" in
          # Restore CPU 4 max freq from msm_performance
          echo "4:4294967295 5:4294967295 6:4294967295 7:4294967295" > /sys/module/msm_performance/parameters/cpu_max_freq
          # input boost configuration
-         echo 0:960000 > /sys/module/cpu_boost/parameters/input_boost_freq
+         echo 0:1344000 > /sys/module/cpu_boost/parameters/input_boost_freq
          echo 40 > /sys/module/cpu_boost/parameters/input_boost_ms
          # configure core_ctl module parameters
          echo 4 > /sys/devices/system/cpu/cpu4/core_ctl/max_cpus
          echo 0 > /sys/devices/system/cpu/cpu4/core_ctl/min_cpus
-         echo 69 > /sys/devices/system/cpu/cpu4/core_ctl/busy_up_thres
-         echo 31 > /sys/devices/system/cpu/cpu4/core_ctl/busy_down_thres
+         echo 70 > /sys/devices/system/cpu/cpu4/core_ctl/busy_up_thres
+         echo 10 > /sys/devices/system/cpu/cpu4/core_ctl/busy_down_thres
          echo 100 > /sys/devices/system/cpu/cpu4/core_ctl/offline_delay_ms
          echo 1 > /sys/devices/system/cpu/cpu4/core_ctl/is_big_cluster
          echo 4 > /sys/devices/system/cpu/cpu4/core_ctl/task_thres

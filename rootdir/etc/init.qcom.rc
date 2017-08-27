@@ -25,6 +25,7 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
+import init.qcom.power.rc
 import init.qcom.usb.rc
 
 on early-init
@@ -42,11 +43,6 @@ on init
 
     chmod 0644 /proc/cmdline
 
-    # Shim camera lib
-    export LD_SHIM_LIBS "/system/lib/hw/camera.msm8994.so|libop2_cam.so"
-
-    # Support legacy paths
-    symlink /sdcard /mnt/sdcard
     symlink /sdcard /storage/sdcard0
 
     # Slow Motion Scheduling Group
@@ -85,6 +81,59 @@ on init
     chmod 0666 /sys/class/leds/led:torch_0/brightness
     chown system system /sys/class/leds/led:torch_1/brightness
     chmod 0666 /sys/class/leds/led:torch_1/brightness
+
+    # Scheduler
+    chown system system /sys/module/cpu_boost/parameters/sysctl_thermal_aware_scheduling
+
+    # Display color calibration
+    chown system system /sys/devices/platform/kcal_ctrl.0/kcal
+    chown system system /sys/devices/platform/kcal_ctrl.0/kcal_enable
+    chown system system /sys/devices/platform/kcal_ctrl.0/kcal_cont
+    chown system system /sys/devices/platform/kcal_ctrl.0/kcal_hue
+    chown system system /sys/devices/platform/kcal_ctrl.0/kcal_invert
+    chown system system /sys/devices/platform/kcal_ctrl.0/kcal_min
+    chown system system /sys/devices/platform/kcal_ctrl.0/kcal_sat
+    chown system system /sys/devices/platform/kcal_ctrl.0/kcal_val
+
+    # Touchscreen
+    chown root system /proc/touchpanel/double_swipe
+    chmod 0660 /proc/touchpanel/double_swipe
+    chown root system /proc/touchpanel/double_tap
+    chmod 0660 /proc/touchpanel/double_tap
+    chown root system /proc/touchpanel/down_swipe
+    chmod 0660 /proc/touchpanel/down_swipe
+    chown root system /proc/touchpanel/draw_circle
+    chmod 0660 /proc/touchpanel/draw_circle
+    chown root system /proc/touchpanel/draw_left_v
+    chmod 0660 /proc/touchpanel/draw_left_v
+    chown root system /proc/touchpanel/draw_reversed_v
+    chmod 0660 /proc/touchpanel/draw_reversed_v
+    chown root system /proc/touchpanel/draw_right_v
+    chmod 0660 /proc/touchpanel/draw_right_v
+    chown root system /proc/touchpanel/draw_v
+    chmod 0660 /proc/touchpanel/draw_v
+    chown root system /proc/touchpanel/left_swipe
+    chmod 0660 /proc/touchpanel/left_swipe
+    chown root system /proc/touchpanel/right_swipe
+    chmod 0660 /proc/touchpanel/right_swipe
+    chown root system /proc/touchpanel/up_swipe
+    chmod 0660 /proc/touchpanel/up_swipe
+
+    # Buttons
+    chown root system /proc/s1302/key_rep
+    chmod 0660 /proc/s1302/key_rep
+
+    chown root system /proc/s1302/virtual_key
+    chmod 0660 /proc/s1302/virtual_key
+
+    chown root system /proc/tri-state-key/keyCode_top
+    chmod 0660 /proc/tri-state-key/keyCode_top
+
+    chown root system /proc/tri-state-key/keyCode_middle
+    chmod 0660 /proc/tri-state-key/keyCode_middle
+
+    chown root system /proc/tri-state-key/keyCode_bottom
+    chmod 0660 /proc/tri-state-key/keyCode_bottom
 
     # PCC Calibration
     chown system system /sys/devices/virtual/graphics/fb0/rgb
@@ -162,14 +211,28 @@ on init
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB
     setrlimit 8 67108864 67108864
-    # set 2048kb readahead size for faster bootup
-    write /sys/block/mmcblk0/queue/read_ahead_kb 2048
+
     write /sys/kernel/boot_adsp/boot 1
 
-on late_start
-    start qcom-power
-
 on boot
+    # add a cpuset for the camera daemon
+    # we want all the little cores for camera
+    mkdir /dev/cpuset/camera-daemon
+    write /dev/cpuset/camera-daemon/cpus 0
+    write /dev/cpuset/camera-daemon/mems 0
+    chown system system /dev/cpuset/camera-daemon
+    chown system system /dev/cpuset/camera-daemon/tasks
+    chmod 0664 /dev/cpuset/camera-daemon/tasks
+
+    # update foreground cpuset now that processors are up
+    # reserve CPU 3 for the top app and camera daemon
+    write /dev/cpuset/foreground/cpus 0-2,4-7
+    write /dev/cpuset/foreground/boost/cpus 4-7
+    write /dev/cpuset/background/cpus 0
+    write /dev/cpuset/system-background/cpus 0-2
+    write /dev/cpuset/top-app/cpus 0-7
+    write /dev/cpuset/camera-daemon/cpus 0-3
+
     start rmt_storage
     start rfs_access
 
@@ -414,12 +477,44 @@ on post-fs-data
     # Create a folder for SRS to be able to create a usercfg file
     mkdir /data/data/media 0770 media media
 
+    # Create PERFD deamon related dirs
+    mkdir /data/misc/perfd 0755 root system
+    chmod 2755 /data/misc/perfd
+    mkdir /data/system/perfd 0770 root system
+    rm /data/system/perfd/default_values
+    chmod 2770 /data/system/perfd
+    # Set perfd properties
+    setprop ro.min_freq_0 384000
+    setprop ro.min_freq_4 384000
+
+    setprop vold.post_fs_data_done 1
+
+on property:sys.boot_completed=1
+    #allow CPUs to go in deeper idle state than C0
+    write /sys/module/lpm_levels/parameters/sleep_disabled 0
+    start zram-init
+    start perfd
+    write /dev/kmsg "Boot completed "
+
+    # Set Memory parameters
+    write /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk 0
+    write /sys/module/lowmemorykiller/parameters/minfree "18432,23040,27648,32256,55296,80640"
+    write /sys/module/lowmemorykiller/parameters/vmpressure_file_min 81250
+
+# start services from here
 # start camera server as daemon
 service qcamerasvr /system/bin/mm-qcamera-daemon
     class late_start
     user camera
     group camera system inet input graphics
     writepid /dev/cpuset/camera-daemon/tasks
+
+service laserinit /system/bin/laser_init
+    class late_start
+    user root
+    group root
+    oneshot
+    writepid /dev/cpuset/system-background/tasks
 
 service qseecomd /system/bin/qseecomd
     class core
@@ -430,9 +525,9 @@ service qseecomd /system/bin/qseecomd
 service perfd /system/vendor/bin/perfd
     class main
     user root
-    group system
-    socket perfd seqpacket 0666 root system
+    group root system readproc
     disabled
+    writepid /dev/cpuset/system-background/tasks
 
 service per_mgr /system/bin/pm-service
     class late_start
@@ -583,12 +678,7 @@ service energy-awareness /system/bin/energy-awareness
     user root
     group system
     oneshot
-
-on property:sys.boot_completed=1
-    write /dev/kmsg "Boot completed "
-    # set best settings for UX
-    write /sys/block/mmcblk0/queue/read_ahead_kb 512
-    setprop sys.io.scheduler "cfq"
+    writepid /dev/cpuset/system-background/tasks
 
 # corefile limit and ETB enabling
 on property:persist.debug.trace=1
@@ -892,10 +982,6 @@ on property:drmdiag.load=0
 service qcom-sh /system/bin/sh /init.qcom.sh
     class late_start
     user root
-    oneshot
-
-service qcom-power /system/bin/sh /system/etc/init.qcom.post_boot.sh
-    disabled
     oneshot
 
 service hostapd /system/bin/hostapd /data/hostapd/hostapd.conf

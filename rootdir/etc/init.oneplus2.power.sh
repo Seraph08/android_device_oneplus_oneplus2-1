@@ -29,16 +29,25 @@ get-set-forall /sys/devices/soc.0/qcom,bcl.*/mode enable
 
 # some files in /sys/devices/system/cpu are created after the restorecon of
 # /sys/. These files receive the default label "sysfs".
-# Restorecon again to give new files the correct label.
 restorecon -R /sys/devices/system/cpu
 
 # ensure at most one A57 is online when thermal hotplug is disabled
+write /sys/devices/system/cpu/cpu4/online 1
 write /sys/devices/system/cpu/cpu5/online 0
 write /sys/devices/system/cpu/cpu6/online 0
 write /sys/devices/system/cpu/cpu7/online 0
 
+# files in /sys/devices/system/cpu4 are created after enabling cpu4.
+# These files receive the default label "sysfs".
+# Restorecon again to give new files the correct label.
+restorecon -R /sys/devices/system/cpu
+
 # Best effort limiting for first time boot if msm_performance module is absent
 write /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq 960000
+
+# some files in /sysmodule/msm_performance/parameters are created after the restorecon of
+# /sys/. These files receive the default label "sysfs".
+restorecon -R /sys/module/msm_performance/parameters
 
 # Limit A57 max freq from msm_perf module in case CPU 4 is offline
 write /sys/module/msm_performance/parameters/cpu_max_freq "4:960000 5:960000 6:960000 7:960000"
@@ -57,9 +66,6 @@ write /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads "80 960000:9
 write /sys/devices/system/cpu/cpu0/cpufreq/interactive/min_sample_time 40000
 write /sys/devices/system/cpu/cpu0/cpufreq/interactive/max_freq_hysteresis 80000
 write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 384000
-
-# online CPU4
-write /sys/devices/system/cpu/cpu4/online 1
 
 # configure governor settings for big cluster
 write /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor interactive
@@ -118,11 +124,20 @@ write /proc/sys/kernel/sched_freq_dec_notify 400000
 
 # Enable rps static configuration
 write /sys/class/net/rmnet_ipa0/queues/rx-0/rps_cpus 8
+
+# Devfreq
 get-set-forall  /sys/class/devfreq/qcom,cpubw*/governor bw_hwmon
+restorecon -R /sys/class/devfreq/qcom,cpubw*
 get-set-forall  /sys/class/devfreq/qcom,mincpubw.*/governor cpufreq
 
 # Disable sched_boost
 write /proc/sys/kernel/sched_boost 0
+
+# change GPU initial power level from 305MHz(level 4) to 180MHz(level 5) for power savings
+write /sys/class/kgsl/kgsl-3d0/default_pwrlevel 5
+
+# set GPU default governor to msm-adreno-tz
+write /sys/class/devfreq/fdb00000.qcom,kgsl-3d0/governor msm-adreno-tz
 
 # re-enable thermal and BCL hotplug
 write /sys/module/msm_thermal/core_control/enabled 1
@@ -130,6 +145,3 @@ get-set-forall /sys/devices/soc.0/qcom,bcl.*/mode disable
 get-set-forall /sys/devices/soc.0/qcom,bcl.*/hotplug_mask $bcl_hotplug_mask
 get-set-forall /sys/devices/soc.0/qcom,bcl.*/hotplug_soc_mask $bcl_hotplug_soc_mask
 get-set-forall /sys/devices/soc.0/qcom,bcl.*/mode enable
-
-# change GPU initial power level from 305MHz(level 4) to 180MHz(level 5) for power savings
-write /sys/class/kgsl/kgsl-3d0/default_pwrlevel 5
