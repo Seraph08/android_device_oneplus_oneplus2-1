@@ -25,8 +25,7 @@ TARGET_OTA_ASSERT_DEVICE := OnePlus2,oneplus2
 
 PLATFORM_PATH := device/oneplus/oneplus2
 
-# Use Snapdragon LLVM, if available
-TARGET_USE_SDCLANG := true
+BOARD_VENDOR := oneplus
 
 # Assertions
 TARGET_BOARD_INFO_FILE ?= $(PLATFORM_PATH)/android-info.txt
