@@ -175,11 +175,6 @@ EBTABLES += libebtc
 #FASTPOWERON
 FASTPOWERON := FastBoot
 
-#FM
-FM := qcom.fmradio
-FM += libqcomfm_jni
-FM += libfmjni
-
 #GPS
 GPS_HARDWARE := gps.conf
 GPS_HARDWARE += gps.default
@@ -653,9 +648,6 @@ PRODUCT_PACKAGES := \
     SyncProvider \
     IM \
     VoiceDialer \
-    FMRadio \
-    FM2 \
-    FMRecord \
     VideoEditor \
     SnapdragonGallery \
     SnapdragonLauncher \
@@ -698,7 +690,6 @@ PRODUCT_PACKAGES += $(E2FSPROGS)
 PRODUCT_PACKAGES += $(EBTABLES)
 PRODUCT_PACKAGES += $(EXTENDEDMEDIA_EXT)
 PRODUCT_PACKAGES += $(FASTPOWERON)
-PRODUCT_PACKAGES += $(FM)
 PRODUCT_PACKAGES += $(GPS_HARDWARE)
 PRODUCT_PACKAGES += $(HDMID)
 PRODUCT_PACKAGES += $(HOSTAPD)

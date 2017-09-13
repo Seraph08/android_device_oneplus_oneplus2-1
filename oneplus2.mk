@@ -149,9 +149,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fingerprintd
     
-# FM
-PRODUCT_PACKAGES += \
-    libfmjni
 
 # For android_filesystem_config.h
 PRODUCT_PACKAGES += \
