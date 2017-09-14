@@ -135,10 +135,6 @@ PRODUCT_PACKAGES += \
     librmnetctl \
     rmnetcli
 
-# Doze mode
-PRODUCT_PACKAGES += \
-    OneplusDoze
-
 # Filesystem management tools
 PRODUCT_PACKAGES += \
     e2fsck \
