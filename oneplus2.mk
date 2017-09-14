@@ -119,7 +119,7 @@ PRODUCT_PACKAGES += \
     libshim_camera \
     libshim_ims-camera \
     sensors.hal.tof \
-    SnapdragonCamera
+    ParanoidCamera
 
 # Display
 PRODUCT_PACKAGES += \
