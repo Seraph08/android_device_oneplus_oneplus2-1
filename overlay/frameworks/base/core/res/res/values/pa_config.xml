@@ -49,18 +49,18 @@
 
     <!-- Keycodes of gestures. If the gesture is not supported set it to 0. -->
     <integer name="config_doubleTapKeyCode">183</integer>
-    <integer name="config_drawVKeyCode">61</integer>
-    <integer name="config_drawInverseVKeyCode">62</integer>
-    <integer name="config_drawOKeyCode">59</integer>
-    <integer name="config_drawMKeyCode">88</integer>
+    <integer name="config_drawVKeyCode">250</integer>
+    <integer name="config_drawInverseVKeyCode">251</integer>
+    <integer name="config_drawOKeyCode">254</integer>
+    <!-- <integer name="config_drawMKeyCode">88</integer>
     <integer name="config_drawWKeyCode">87</integer>
     <integer name="config_drawArrowLeftKeyCode">63</integer>
-    <integer name="config_drawArrowRightKeyCode">64</integer>
-    <integer name="config_oneFingerSwipeUpKeyCode">68</integer>
-    <integer name="config_oneFingerSwipeRightKeyCode">65</integer>
-    <integer name="config_oneFingerSwipeDownKeyCode">67</integer>
-    <integer name="config_oneFingerSwipeLeftKeyCode">66</integer>
-    <integer name="config_twoFingerSwipeKeyCode">60</integer>
+    <integer name="config_drawArrowRightKeyCode">64</integer> -->
+    <integer name="config_oneFingerSwipeUpKeyCode">259</integer>
+    <integer name="config_oneFingerSwipeRightKeyCode">256</integer>
+    <integer name="config_oneFingerSwipeDownKeyCode">258</integer>
+    <integer name="config_oneFingerSwipeLeftKeyCode">257</integer>
+    <integer name="config_twoFingerSwipeKeyCode">255</integer>
 
     <!-- Default settings for gestures
             0 - Disabled
@@ -72,11 +72,8 @@
             6 - Previous music
             7 - Open camera
             8 - Open dialer -->
-    <integer name="config_doubleTapDefault">1</integer>
     <integer name="config_drawVDefault">2</integer>
-
     <integer name="config_drawInverseVDefault">0</integer>
-
     <integer name="config_drawODefault">7</integer>
     <integer name="config_drawMDefault">0</integer>
     <integer name="config_drawWDefault">0</integer>
@@ -103,9 +100,4 @@
     <integer name="config_proximityCheckTimeout">100</integer>
     <add-resource type="bool" name="config_proximityCheckOnWakeEnabledByDefault"></add-resource>
     <bool name="config_proximityCheckOnWakeEnabledByDefault">true</bool>
-
- <!-- Defines the sysfs attribute path used by pocket bridge
-        to communicate pocket state to the pocket judge kernel driver. -->
-    <string name="config_pocketBridgeSysfsInpocket">/sys/kernel/pocket_judge/inpocket</string>
-
 </resources>
