@@ -19,6 +19,3 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_PRELINK_MODULE := false
 LOCAL_CLANG := true
 include $(BUILD_SHARED_LIBRARY)
-
-endif # $(TARGET_ARCH)
-endif
