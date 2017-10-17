@@ -375,10 +375,7 @@ etc/firmware/a420_pm4.fw
 vendor/lib/hw/keystore.msm8994.so
 vendor/lib64/hw/keystore.msm8994.so
 
-# Listen - OxygenOS 3.6.0
-vendor/lib/hw/sound_trigger.primary.msm8994.so
-
-# Media
+# Media - OxygenOS 3.6.0
 vendor/lib/libDivxDrm.so
 vendor/lib/libI420colorconvert.so
 vendor/lib/libOmxAacDec.so
