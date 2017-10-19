@@ -452,12 +452,8 @@
 
     <!-- #ifdef VENDOR_EDIT-->
     <!-- zhiguang.su@MultiMedia.AudioDrv,2015/4/28,changed for EC ref -->
-    <path name="echo-reference-skype">
-        <ctl name="AUDIO_REF_EC_UL5 MUX" value="QUAT_MI2S_TX" />
-    </path>
-
     <path name="echo-reference">
-        <ctl name="AUDIO_REF_EC_UL1 MUX" value="QUAT_MI2S_TX" />
+        <ctl name="AUDIO_REF_EC_UL5 MUX" value="QUAT_MI2S_TX" />
     </path>
    <!-- #endif VENDOR_EDIT-->
 
@@ -1350,7 +1346,6 @@
     <!-- #ifdef VENDOR_EDIT-->
     <!-- zhiguang.su@MultiMedia.AudioDrv 2015-05-13 add for volte call speaker  -->
     <path name="volte-call speaker">
-        <ctl name="VOC_EXT_EC MUX" value="QUAT_MI2S_TX" />
         <ctl name="QUAT_MI2S_RX_Voice Mixer VoLTE" value="1" />
         <ctl name="VoLTE_Tx Mixer SLIM_0_TX_VoLTE" value="1" />
     </path>
@@ -1615,39 +1610,25 @@
         <ctl name="DEC6 MUX" value="DMIC6" />
         <ctl name="IIR1 INP1 MUX" value="DEC6" />
     </path>
-    
-   <!-- #ifdef VENDOR_EDIT-->
-   <!-- zhiguang.su@MultiMedia.AudioDrv,2015/3/5,pa do not use the following control any more  -->    	
-       <!--<path name="speaker">   -->
-        <!--<ctl name="SLIM RX1 MUX" value="AIF1_PB" /> -->
-        <!--<ctl name="SLIM RX2 MUX" value="AIF1_PB" /> -->
-        <!--<ctl name="SLIM_0_RX Channels" value="Two" /> -->
-        <!--<ctl name="RX7 MIX1 INP1" value="RX1" /> -->
-        <!--<ctl name="RX8 MIX1 INP1" value="RX2" /> -->
-        <!-- <ctl name="RX7 Digital Volume" value="84" /> -->
-        <!--<ctl name="RX8 Digital Volume" value="84" /> -->
-        <!--<ctl name="COMP0 Switch" value="1" /> -->
-    <!--</path>  -->
-    <!-- #endif VENDOR_EDIT-->
-    
-   <!-- #ifdef VENDOR_EDIT-->
-   <!-- zhiguang.su@MultiMedia.AudioDrv,2015/4/28,remove for causing ec ref problem  -->
 
     <path name="speaker">
-      	<!-- <ctl name="left Profile" value="0" /> -->
+        <ctl name="SLIM RX1 MUX" value="AIF1_PB" />
+        <ctl name="SLIM RX2 MUX" value="AIF1_PB" />
+        <ctl name="SLIM_0_RX Channels" value="Two" />
+        <ctl name="RX7 MIX1 INP1" value="RX1" />
+        <ctl name="RX8 MIX1 INP1" value="RX2" />
+        <ctl name="RX7 Digital Volume" value="84" />
+        <ctl name="RX8 Digital Volume" value="84" />
+        <ctl name="COMP0 Switch" value="1" />
     </path>
-    <!-- #endif VENDOR_EDIT-->
 
-   <!-- #ifdef VENDOR_EDIT-->
-   <!-- zhiguang.su@MultiMedia.AudioDrv,2015/3/5,deleted unused path,which cause phone breakdown when power up  -->    	
     <path name="speaker-fluid">
-    <!--    <ctl name="SLIM RX1 MUX" value="AIF1_PB" /> -->
-     <!--    <ctl name="SLIM_0_RX Channels" value="One" /> -->
-     <!--    <ctl name="RX8 MIX1 INP1" value="RX1" /> -->
-     <!--    <ctl name="RX8 Digital Volume" value="84" /> -->
-     <!--    <ctl name="COMP0 Switch" value="1" /> -->
+        <ctl name="SLIM RX1 MUX" value="AIF1_PB" />
+        <ctl name="SLIM_0_RX Channels" value="One" />
+        <ctl name="RX8 MIX1 INP1" value="RX1" />
+        <ctl name="RX8 Digital Volume" value="84" />
+        <ctl name="COMP0 Switch" value="1" />
     </path>
-<!-- #endif VENDOR_EDIT-->
 
     <path name="speaker-liquid">
         <path name="speaker" />
@@ -1845,10 +1826,6 @@
         <ctl name="SLIM RX1 MUX" value="AIF1_PB" />
         <ctl name="SLIM RX2 MUX" value="AIF1_PB" />
         <ctl name="SLIM_0_RX Channels" value="Two" />
-        <!-- #ifdef VENDOR_EDIT-->
-        <!-- guoguangyi@MultiMedia,2016/4/7,use 24bits to get rid of 16bits innate noise  -->
-        <ctl name="SLIM_0_RX Format" value="S24_LE" />
-        <!-- #endif VENDOR_EDIT-->
         <ctl name="RX1 MIX1 INP1" value="RX1" />
         <ctl name="RX2 MIX1 INP1" value="RX2" />
         <ctl name="CLASS_H_DSM MUX" value="DSM_HPHL_RX1" />
@@ -2165,6 +2142,7 @@
         <ctl name="DEC10 MUX" value="DMIC3" />
         <ctl name="IIR1 INP1 MUX" value="DEC7" />
     </path>
+
     <!-- Dual MIC devices -->
     <!-- #ifdef VENDOR_EDIT-->
     <!-- zhiguang.su@MultiMedia.AudioDrv,2015/3/24,change for 14049 config  -->
@@ -2205,7 +2183,6 @@
         <ctl name="ADC3 Volume" value="13" />
         <ctl name="ADC4 Volume" value="8" />
     </path>
-<!-- #endif VENDOR_EDIT-->
 
     <path name="speaker-stereo-dmic-ef">
         <path name="speaker-dmic-endfire" />
@@ -2413,14 +2390,6 @@
     <path name="listen-handset-mic">
         <ctl name="MADONOFF Switch" value="1" />
         <ctl name="MAD Input" value="DMIC1" />
-    </path>
-
-    <path name="unprocessed-handset-mic">
-        <path name="handset-mic" />
-    </path>
-
-    <path name="unprocessed-mic">
-        <path name="unprocessed-handset-mic" />
     </path>
 
     <!-- Added for ADSP testfwk -->
