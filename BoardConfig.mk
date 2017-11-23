@@ -118,6 +118,7 @@ TARGET_LDPRELOAD := libNimsWrap.so
 
 # Cpusets
 ENABLE_CPUSETS := true
+ENABLE_SCHED_BOOST := true
 
 # Display
 MAX_EGL_CACHE_KEY_SIZE := 12*1024
