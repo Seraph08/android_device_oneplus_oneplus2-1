@@ -14,3 +14,7 @@ allow system_server user_profile_data_file:dir { read open };
 allow system_server proc:file w_file_perms; 
 allow system_server qemu_hw_mainkeys_prop:property_service set; 
 
+# To improve app launch times - we would like to force all tasks to
+# run on big cores for app launch (sched_boost) - instead of just
+# boosting them to make it "more likely" to run on big cores.
+allow system_server domain:process setsched;
